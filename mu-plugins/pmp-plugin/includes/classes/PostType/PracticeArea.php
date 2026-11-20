@@ -84,6 +84,17 @@ class PracticeArea extends BasePostType {
 		return [
 			'title_secondary' => [
 				'type' => 'string',
+				'description'       => 'Alternative title shown on practice area cards.',
+				'sanitize_callback' => 'sanitize_text_field',
+				'show_in_rest'     => true,
+			],
+			'card_image' => [
+				'type' => 'integer',
+				'description'       => 'Image ID for the practice area card.',
+				'show_in_rest'     => true,
+				'single'           => true,
+				'description'       => 'Attachment ID for the card image.',
+				'sanitize_callback' => 'absint',
 			],
 		];
 	}
