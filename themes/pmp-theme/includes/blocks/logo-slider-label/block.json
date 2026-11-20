@@ -1,0 +1,36 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "category": "design",
+  "textdomain": "pmp-theme",
+  "editorScript": "file:./index.js",
+  "name": "pmp/logo-slider-label",
+  "title": "Logo Slider Label",
+  "description": "An optional label overlay. Set its background color or gradient in Styles.",
+  "icon": "editor-textcolor",
+  "parent": [
+    "pmp/logo-slider"
+  ],
+  "attributes": {
+    "text": {
+      "type": "string",
+      "source": "html",
+      "selector": "span",
+      "default": "Featured In"
+    }
+  },
+  "supports": {
+    "html": false,
+    "color": {
+      "background": true,
+      "text": true,
+      "gradients": true
+    },
+    "spacing": {
+      "padding": true
+    },
+    "typography": {
+      "fontSize": true
+    }
+  }
+}

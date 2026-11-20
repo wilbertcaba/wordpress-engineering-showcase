@@ -1,0 +1,22 @@
+.wp-block-pmp-logo-slider {
+
+	& > .block-editor-inner-blocks > .block-editor-block-list__layout {
+		align-items: center;
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--logo-slider-gap, 64px);
+	}
+
+	& .wp-block-image {
+		flex: 0 0 var(--logo-slider-width, 200px);
+	}
+
+	/* Keep the label selectable without covering the logo editing controls. */
+	& .wp-block-pmp-logo-slider-label {
+		position: static;
+	}
+}
+
+.wp-block-pmp-logo-slider.has-auto-width .wp-block-image {
+	flex-basis: auto;
+}

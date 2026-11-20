@@ -1,0 +1,85 @@
+@import url("@splidejs/splide/dist/css/splide-core.min.css");
+
+.wp-block-pmp-logo-slider {
+	padding: 2rem 0;
+	position: relative;
+	visibility: visible;
+
+	& .splide__list {
+		align-items: center;
+		height: auto;
+	}
+
+	/* A useful static row when JavaScript is unavailable. */
+	&:not(.is-initialized) .splide__list {
+		display: flex;
+		gap: var(--logo-slider-gap, 64px);
+	}
+
+	& .splide__slide {
+		align-items: center;
+		display: flex;
+		justify-content: center;
+		width: var(--logo-slider-width, 200px);
+	}
+
+	& .wp-block-image {
+		margin: 0;
+		width: 100%;
+	}
+
+	& .wp-block-image img {
+		display: block;
+		height: var(--logo-slider-height, 64px);
+		object-fit: contain;
+		width: 100%;
+	}
+
+	& .splide__arrows,
+	& .splide__pagination,
+	& .splide__toggle {
+		display: none;
+	}
+}
+
+/* Intrinsic image proportions determine slide width in automatic mode.
+ * Override dimensions saved by resized core Image blocks as well.
+ */
+.wp-block-pmp-logo-slider.has-auto-width {
+
+	& .splide__slide,
+	& .wp-block-image {
+		width: auto !important;
+	}
+
+	& .wp-block-image img {
+		aspect-ratio: auto !important;
+		height: var(--logo-slider-height, 64px) !important;
+		max-width: none;
+		width: auto !important;
+	}
+}
+
+.wp-block-pmp-logo-slider-label {
+	align-items: center;
+	bottom: 0;
+	display: flex;
+	left: 0;
+	max-width: 85%;
+	padding: 1rem 3rem 1rem 1.5rem;
+	position: absolute;
+	top: 0;
+	z-index: 2;
+
+	& span {
+		white-space: nowrap;
+	}
+}
+
+@media (max-width: 600px) {
+
+	.wp-block-pmp-logo-slider-label {
+		font-size: 0.875rem;
+		padding: 0.75rem 1.5rem 0.75rem 0.75rem;
+	}
+}

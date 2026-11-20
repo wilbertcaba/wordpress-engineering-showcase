@@ -59,3 +59,6 @@ update_option( 'show_on_front', 'page' ); update_option( 'page_on_front', $page 
 update_option( 'permalink_structure', '/%postname%/' );
 flush_rewrite_rules();
 WP_CLI::success( 'Seeded ' . ( $after ? 'after' : 'before' ) . ' demo: 8 practice areas. Re-running is safe for showcase-owned records.' );
+
+// New features are available only in the after environment.
+if ( $after ) { require __DIR__ . '/seed-logo-slider.php'; }

@@ -328,6 +328,126 @@
       "adapted": true,
       "repository": "theme",
       "extractedSha256": "247112c171fbec520fdf8ca0c4d71d8c4af7b885226af21960b1ec6ff3a3c765"
+    },
+    {
+      "source": "assets/js/frontend/components/logo-slider.js",
+      "destination": "themes/pmp-theme/assets/js/frontend/components/logo-slider.js",
+      "repository": "theme",
+      "sourceRevision": "3671da24b225fe4689d5b73556aace4b715839d3",
+      "feature": "logo-slider",
+      "sourceSha256": "0d40e25752fe5ae2772db8fb22d85309dd3c1abcc4379574704bad2369faf64d",
+      "extractedSha256": "a28b672a5797aa4e70089c36241732fa5798d2eeb1b11e480f8f68dd835db9bd",
+      "adapted": true
+    },
+    {
+      "source": "includes/blocks/logo-slider-label/block.json",
+      "destination": "themes/pmp-theme/includes/blocks/logo-slider-label/block.json",
+      "repository": "theme",
+      "sourceRevision": "3671da24b225fe4689d5b73556aace4b715839d3",
+      "feature": "logo-slider",
+      "sourceSha256": "5b2ad2b00829641f24204b2b0040af093356f0d3126762fc4275db043dbf783b",
+      "extractedSha256": "5b2ad2b00829641f24204b2b0040af093356f0d3126762fc4275db043dbf783b",
+      "adapted": false
+    },
+    {
+      "source": "includes/blocks/logo-slider-label/edit.js",
+      "destination": "themes/pmp-theme/includes/blocks/logo-slider-label/edit.js",
+      "repository": "theme",
+      "sourceRevision": "3671da24b225fe4689d5b73556aace4b715839d3",
+      "feature": "logo-slider",
+      "sourceSha256": "731c3d532f391869b428caa6b3a8b0f43d34642eca43343ffb490074d9935354",
+      "extractedSha256": "731c3d532f391869b428caa6b3a8b0f43d34642eca43343ffb490074d9935354",
+      "adapted": false
+    },
+    {
+      "source": "includes/blocks/logo-slider-label/index.js",
+      "destination": "themes/pmp-theme/includes/blocks/logo-slider-label/index.js",
+      "repository": "theme",
+      "sourceRevision": "3671da24b225fe4689d5b73556aace4b715839d3",
+      "feature": "logo-slider",
+      "sourceSha256": "3f0076cee538e0142cfaae369514c1697454919782c313966a1f37c4e108ee53",
+      "extractedSha256": "3f0076cee538e0142cfaae369514c1697454919782c313966a1f37c4e108ee53",
+      "adapted": false
+    },
+    {
+      "source": "includes/blocks/logo-slider-label/save.js",
+      "destination": "themes/pmp-theme/includes/blocks/logo-slider-label/save.js",
+      "repository": "theme",
+      "sourceRevision": "3671da24b225fe4689d5b73556aace4b715839d3",
+      "feature": "logo-slider",
+      "sourceSha256": "9f45e0b839aac7b23c17080ffdb9d510867101dfcfd5ee217baa97b301016b85",
+      "extractedSha256": "9f45e0b839aac7b23c17080ffdb9d510867101dfcfd5ee217baa97b301016b85",
+      "adapted": false
+    },
+    {
+      "source": "includes/blocks/logo-slider/block.json",
+      "destination": "themes/pmp-theme/includes/blocks/logo-slider/block.json",
+      "repository": "theme",
+      "sourceRevision": "3671da24b225fe4689d5b73556aace4b715839d3",
+      "feature": "logo-slider",
+      "sourceSha256": "ecb326508a2d24bd39447b39d2ef2a0182590cae796dd85f294d1594c5ab99fd",
+      "extractedSha256": "fa256f104846fc358c52c54fb62de3bcfbd484a881bf7acbf0cc8536d0269018",
+      "adapted": true
+    },
+    {
+      "source": "includes/blocks/logo-slider/edit.js",
+      "destination": "themes/pmp-theme/includes/blocks/logo-slider/edit.js",
+      "repository": "theme",
+      "sourceRevision": "3671da24b225fe4689d5b73556aace4b715839d3",
+      "feature": "logo-slider",
+      "sourceSha256": "e32d31f5ce4882ab3eb18ec3b259753c9b76cfc0f79aab1f3bdb44c3feb02cd6",
+      "extractedSha256": "e32d31f5ce4882ab3eb18ec3b259753c9b76cfc0f79aab1f3bdb44c3feb02cd6",
+      "adapted": false
+    },
+    {
+      "source": "includes/blocks/logo-slider/editor-style.css",
+      "destination": "themes/pmp-theme/includes/blocks/logo-slider/editor-style.css",
+      "repository": "theme",
+      "sourceRevision": "3671da24b225fe4689d5b73556aace4b715839d3",
+      "feature": "logo-slider",
+      "sourceSha256": "18c8598fa627444efe543df6cba717c78a6b5a1b4d668dcdfba03064fa736c14",
+      "extractedSha256": "18c8598fa627444efe543df6cba717c78a6b5a1b4d668dcdfba03064fa736c14",
+      "adapted": false
+    },
+    {
+      "source": "includes/blocks/logo-slider/index.js",
+      "destination": "themes/pmp-theme/includes/blocks/logo-slider/index.js",
+      "repository": "theme",
+      "sourceRevision": "3671da24b225fe4689d5b73556aace4b715839d3",
+      "feature": "logo-slider",
+      "sourceSha256": "3f0076cee538e0142cfaae369514c1697454919782c313966a1f37c4e108ee53",
+      "extractedSha256": "3f0076cee538e0142cfaae369514c1697454919782c313966a1f37c4e108ee53",
+      "adapted": false
+    },
+    {
+      "source": "includes/blocks/logo-slider/markup.php",
+      "destination": "themes/pmp-theme/includes/blocks/logo-slider/markup.php",
+      "repository": "theme",
+      "sourceRevision": "3671da24b225fe4689d5b73556aace4b715839d3",
+      "feature": "logo-slider",
+      "sourceSha256": "48f7afd1088e2ee859e3386b53f190631f7a7722ef1a0714782e38ecf12e3556",
+      "extractedSha256": "48f7afd1088e2ee859e3386b53f190631f7a7722ef1a0714782e38ecf12e3556",
+      "adapted": false
+    },
+    {
+      "source": "includes/blocks/logo-slider/save.js",
+      "destination": "themes/pmp-theme/includes/blocks/logo-slider/save.js",
+      "repository": "theme",
+      "sourceRevision": "3671da24b225fe4689d5b73556aace4b715839d3",
+      "feature": "logo-slider",
+      "sourceSha256": "d42f8b3bc908a44ea41090418b63f2aabeb315d001e23500618bb89b3d8024cd",
+      "extractedSha256": "d42f8b3bc908a44ea41090418b63f2aabeb315d001e23500618bb89b3d8024cd",
+      "adapted": false
+    },
+    {
+      "source": "includes/blocks/logo-slider/style.css",
+      "destination": "themes/pmp-theme/includes/blocks/logo-slider/style.css",
+      "repository": "theme",
+      "sourceRevision": "3671da24b225fe4689d5b73556aace4b715839d3",
+      "feature": "logo-slider",
+      "sourceSha256": "15a2c3b3f640c0574ec85d4f3487fd1b582a87a399d81ef94ee72ec60490de72",
+      "extractedSha256": "15a2c3b3f640c0574ec85d4f3487fd1b582a87a399d81ef94ee72ec60490de72",
+      "adapted": false
     }
   ],
   "notes": [
@@ -363,5 +483,23 @@
   "pluginFeatureCommits": [
     "fea404a1af7f04593ecbf4ee6071d6bb04449029",
     "ea8d4d95cd70717d68915dbe3d75ae84b0a8361f"
-  ]
+  ],
+  "features": {
+    "logo-slider": {
+      "type": "new",
+      "environment": "after",
+      "repository": "https://github.com/pmp-marketing-group/pmp-theme",
+      "sourceRevision": "3671da24b225fe4689d5b73556aace4b715839d3",
+      "sourceCommits": [
+        "c892411f17129f2a5b843145c139fe5c5f47656d",
+        "3671da24b225fe4689d5b73556aace4b715839d3"
+      ],
+      "documentation": "docs/logo-slider/README.md",
+      "adaptations": [
+        "Register a block viewScript entry point instead of initializing from the original application-wide frontend bundle.",
+        "Demo fixtures, seed scripts, navigation and verification are showcase-only additions.",
+        "Remove the sizes=auto keyword when automatic-width images are switched to eager loading, avoiding WordPress intrinsic-size containment distorting their widths."
+      ]
+    }
+  }
 }

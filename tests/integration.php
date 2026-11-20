@@ -41,3 +41,7 @@ if ( $after ) {
     showcase_assert( $image === sanitize_meta( 'card_image', -$image, 'post', 'pmp_practice_area' ), 'Attachment IDs normalized with absint' );
 }
 WP_CLI::success( 'Integration checks complete.' );
+
+$logo_registered = WP_Block_Type_Registry::get_instance()->is_registered( 'pmp/logo-slider' );
+showcase_assert( $logo_registered === $after, 'Logo Slider available only in the after theme' );
+if ( $logo_registered ) { require __DIR__ . '/logo-slider-integration.php'; }

@@ -1,0 +1,52 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "category": "design",
+  "textdomain": "pmp-theme",
+  "editorScript": "file:./index.js",
+  "name": "pmp/logo-slider",
+  "title": "Logo Slider",
+  "description": "A continuously scrolling, draggable row of logos with an optional label.",
+  "icon": "images-alt2",
+  "attributes": {
+    "scrollSpeed": {
+      "type": "number",
+      "default": 1
+    },
+    "logoWidth": {
+      "type": "number",
+      "default": 200
+    },
+    "logoHeight": {
+      "type": "number",
+      "default": 64
+    },
+    "logoGap": {
+      "type": "number",
+      "default": 64
+    },
+    "autoWidth": {
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "supports": {
+    "html": false,
+    "align": [
+      "wide",
+      "full"
+    ],
+    "color": {
+      "background": true,
+      "text": true,
+      "gradients": true
+    },
+    "spacing": {
+      "padding": true,
+      "margin": true
+    }
+  },
+  "style": "file:./style.css",
+  "editorStyle": "file:./editor-style.css",
+  "viewScript": "file:./view.js"
+}

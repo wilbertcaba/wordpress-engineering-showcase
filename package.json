@@ -18,7 +18,8 @@
     "test:browser": "playwright test",
     "lint:php": "node scripts/lint-php.mjs",
     "local:link": "node scripts/local-link.mjs",
-    "provenance:check": "node scripts/verify-provenance.mjs"
+    "provenance:check": "node scripts/verify-provenance.mjs",
+    "demo:seed:logo-slider": "node scripts/demo.mjs seed-logo-slider"
   },
   "devDependencies": {
     "@wordpress/env": "12.2.0",

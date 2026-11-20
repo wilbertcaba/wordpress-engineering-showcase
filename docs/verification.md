@@ -39,3 +39,18 @@ Webpack also reports the existing editor-bundle size recommendation and a deprec
 The Git history is newly created and contains only the curated extraction, fixtures, documentation and showcase tooling. No production deployments, uploads, database exports, credentials or original Git history are included.
 
 Publication and license review remains required by the agreed plan; see NOTICE.md. No public push is part of the local verification record. The final local tag `practice-areas-grid-after` identifies the verified demo, while `practice-areas-grid-extracted` identifies the original feature extraction before showcase corrections.
+
+## Logo Slider addition — November 20, 2026
+
+The after-only Logo Slider was extracted with its label block and pinned Splide dependencies. Verification used the same WordPress 6.8.3 / PHP 8.2.29 / SQLite environment as the Grid demo.
+
+- Eight browser tests passed together: the four existing Grid tests and four Logo Slider tests.
+- Logo Slider checks confirmed both sizing modes, distinct image proportions, an optional label, motion-preference changes, hover/focus pausing, keyboard links, static rendering without JavaScript, absence from the before site, valid editor blocks, and settings persistence after saving/reloading.
+- WordPress integration checks passed for both environments, including slider registration, one demo page, six fixtures, twelve original slides across two instances, alternative text, image links, and server-side numeric bounds.
+- The feature-only seed command was run twice. The Grid page-content hash and home-page setting matched before and after; no duplicate logo pages or attachments were created.
+- The feature build, JavaScript lint, PHP syntax checks, three existing unit tests, and hashes for 52 extracted source files passed.
+- Desktop and mobile screenshots were inspected. The after navigation now links to both feature demos, and Grid screenshots were refreshed to reflect that navigation.
+
+A browser test exposed a WordPress responsive-image compatibility issue: an image switched from lazy to eager loading could retain `sizes="auto"`, producing 3000px size containment. The extracted initializer removes that keyword before decoding automatic-width images. This adaptation and the per-block script entry point are recorded in the provenance manifest and feature README. The private theme source and existing comparison tags were not changed.
+
+Docker execution and Local-app provisioning remain outside the verified runtime coverage recorded above.
