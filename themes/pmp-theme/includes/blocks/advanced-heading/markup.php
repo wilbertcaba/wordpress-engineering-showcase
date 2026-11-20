@@ -10,9 +10,6 @@
  * @var array    $context           Block context.
  */
 
-// Debug: Let's see what we're getting
-error_log( 'Advanced Heading Attributes: ' . print_r( $attributes, true ) );
-
 // Get dynamic content if enabled
 $heading_content = $attributes['headingTitle'];
 

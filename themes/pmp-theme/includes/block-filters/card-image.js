@@ -2,13 +2,14 @@ import { __ } from '@wordpress/i18n';
 import { registerPlugin } from '@wordpress/plugins';
 import { PluginDocumentSettingPanel } from '@wordpress/edit-post';
 import { useSelect, useDispatch } from '@wordpress/data';
-import { Button, IconButton } from '@wordpress/components';
+import { Button } from '@wordpress/components';
 import { MediaUpload, MediaUploadCheck } from '@wordpress/block-editor';
 
 const CardImagePanel = () => {
 	const { editPost } = useDispatch('core/editor'); // eslint-disable-line @wordpress/no-unused-vars-before-return
 	const meta = useSelect((select) => select('core/editor').getEditedPostAttribute('meta')); // eslint-disable-line @wordpress/no-unused-vars-before-return
-	const cardImageId = meta && meta.card_image ? meta.card_image : '';
+	const cardImageId = meta?.card_image || 0;
+	const postType = useSelect((select) => select('core/editor').getCurrentPostType(), []);
 
 	// Always call hooks in the same order — use meta-derived id in dependency array
 	const media = useSelect(
@@ -16,9 +17,9 @@ const CardImagePanel = () => {
 		[cardImageId],
 	);
 
-	// if (!meta) {
-	// 	return null;
-	// }
+	if (postType !== 'pmp_practice_area' || !meta) {
+		return null;
+	}
 
 	const onCustomMetaChange = (meta_key, meta_value) => {
 		editPost({
@@ -66,16 +67,16 @@ const CardImagePanel = () => {
 									/>
 								</div>
 							) : null}
-							<Button isPrimary onClick={open}>
+							<Button variant="primary" onClick={open}>
 								{cardImageId
 									? __('Replace image', 'pmp-theme')
 									: __('Select image', 'pmp-theme')}
 							</Button>
 							{cardImageId ? (
-								<IconButton
+								<Button variant="tertiary"
 									icon="no"
 									label={__('Remove image', 'pmp-theme')}
-									onClick={() => onCustomMetaChange('card_image', '')}
+									onClick={() => onCustomMetaChange('card_image', 0)}
 								/>
 							) : null}
 						</>

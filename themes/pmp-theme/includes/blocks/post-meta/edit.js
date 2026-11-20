@@ -4,7 +4,6 @@
  * External dependencies
  */
 import classnames from 'classnames';
-import { debounce } from 'lodash';
 
 /**
  * WordPress dependencies
@@ -12,7 +11,6 @@ import { debounce } from 'lodash';
 import { __ } from '@wordpress/i18n';
 import { useEntityProp, store as coreStore } from '@wordpress/core-data';
 import { useSelect, useDispatch } from '@wordpress/data';
-import { useEffect } from '@wordpress/element';
 import { MediaUpload, MediaUploadCheck, useBlockProps } from '@wordpress/block-editor';
 import { Button } from '@wordpress/components';
 
@@ -63,7 +61,7 @@ const ImageEditor = ({ blockProps, image, onSelectImage, onRemoveImage }) => {
 	);
 };
 
-const PostMetaEdit = ({ attributes, setAttributes, context }) => {
+const PostMetaEdit = ({ attributes, context }) => {
 	const { textAlign, metaKey, isTitle, isImage } = attributes;
 	const { postId, postType } = context;
 
@@ -96,26 +94,16 @@ const PostMetaEdit = ({ attributes, setAttributes, context }) => {
 		}),
 	});
 
-	useEffect(() => {
-		// Check if this is a card_image meta when component mounts
-		if (meta && 'card_image' in meta) {
-			setAttributes({
-				metaKey: 'card_image',
-				isImage: true,
-			});
-		}
-	}, [meta, setAttributes]);
-
 	// Return early if we don't have valid data
 	if (!postId || !postType || !metaKey) {
 		return null;
 	}
 
 	// Create debounced update function
-	const updateValue = debounce((newValue) => {
+	const updateValue = (newValue) => {
 		setMeta({ ...meta, [metaKey]: newValue });
 		saveEditedEntityRecord('postType', postType, postId);
-	}, 300);
+	};
 
 	// Render image editor if in edit mode and isImage is true
 	if (isImage) {
@@ -130,7 +118,7 @@ const PostMetaEdit = ({ attributes, setAttributes, context }) => {
 	}
 
 	// For non-image meta fields, render the meta value
-	return <div {...props}>{meta[metaKey]}</div>;
+	return <div {...props}>{meta?.[metaKey] ?? ''}</div>;
 };
 
 export default PostMetaEdit;

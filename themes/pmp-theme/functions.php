@@ -34,6 +34,7 @@ add_action( 'wp_enqueue_scripts', static function () {
 } );
 add_action( 'enqueue_block_editor_assets', static function () {
     pmp_showcase_script( 'editor' );
+    wp_enqueue_style( 'pmp-editor-overrides', get_template_directory_uri() . '/dist/css/editor.css', [], '1.0.0' );
 } );
 // Server-side context counterpart of the editor extension.
 add_filter( 'block_type_metadata', static function ( $metadata ) {

@@ -27,7 +27,7 @@ $size_slug  = $attributes['sizeSlug'] ?? 'large';
 ?>
 
 <div <?php echo $wrapper_attributes; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
-	<?php if ( $is_image && ! empty( $meta_value ) ) : ?>
+	<?php if ( $is_image ) : ?>
 		<?php
 		echo wp_get_attachment_image(
 			$meta_value,

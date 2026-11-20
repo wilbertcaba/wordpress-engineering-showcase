@@ -6,7 +6,6 @@ import { __ } from '@wordpress/i18n';
 import { useBlockProps, RichText, InspectorControls } from '@wordpress/block-editor';
 import { PanelBody, SelectControl, ToggleControl, TextControl } from '@wordpress/components';
 import { useSelect } from '@wordpress/data';
-import { useEffect } from '@wordpress/element';
 
 const Edit = ({ attributes, setAttributes, context }) => {
 	const {
@@ -35,7 +34,7 @@ const Edit = ({ attributes, setAttributes, context }) => {
 			);
 
 			// Also fetch post meta
-			const meta = select('core/editor').getEditedPostAttribute('meta');
+			const meta = select('core').getEditedEntityRecord('postType', context.postType, context.postId)?.meta;
 
 			return {
 				...post,
@@ -91,7 +90,7 @@ const Edit = ({ attributes, setAttributes, context }) => {
 
 			// If ACF store doesn't work, try alternative methods
 			// 1. Try core editor's meta data
-			const meta = select('core/editor').getEditedPostAttribute('meta');
+			const meta = select('core').getEditedEntityRecord('postType', context.postType, context.postId)?.meta;
 			if (meta && meta[customField] !== undefined) {
 				return meta[customField];
 			}
@@ -158,95 +157,17 @@ const Edit = ({ attributes, setAttributes, context }) => {
 		[context.postType],
 	);
 
-	// Update heading content based on dynamic settings
-	useEffect(() => {
-		if (!isDynamic || !postData) return;
 
-		let newContent = '';
-
-		switch (dynamicSource) {
-			case 'current-post':
-				switch (sourceField) {
-					case 'title':
-						newContent = postData.title?.rendered || '';
-						break;
-					case 'excerpt':
-						newContent = postData.excerpt?.rendered || '';
-						break;
-					default:
-						newContent = '';
-						break;
-				}
-				break;
-			case 'custom-field':
-				if (customField) {
-					// Display placeholder in editor, but don't save it to the actual attribute
-					const editorContent = `${__('Field Name:', 'pmp-theme')} ${customField}`;
-
-					// Check if we're actually setting this for display or for saving
-					// Only update the actual attribute if we have real data
-					if (acfFieldValue) {
-						newContent = acfFieldValue;
-					} else {
-						// We're just displaying a placeholder in the editor
-						newContent = editorContent;
-
-						// Set an empty string to the real attribute to avoid saving placeholder
-						setTimeout(() => {
-							// This prevents the placeholder from being saved to the attribute
-							setAttributes({ _actualHeadingTitle: '' });
-						}, 0);
-					}
-				} else {
-					newContent = __('No field selected', 'pmp-theme');
-				}
-				break;
-			case 'custom-input':
-				newContent = customInput;
-				break;
-			case 'custom-meta':
-				if (customMetaKey) {
-					// Check meta fields first
-					newContent = postData.meta?.[customMetaKey] || '';
-
-					// If it's a taxonomy term, try to get the term name
-					if (!newContent && dynamicSource === 'custom-meta') {
-						if (postTerms === null) {
-							// Still loading terms or not a taxonomy
-							newContent = `${__('Loading', 'pmp-theme')}...`;
-						} else if (postTerms && postTerms.length > 0) {
-							// We have terms, combine their names
-							newContent = postTerms.map((term) => term.name).join(', ');
-						} else {
-							// No terms found for this taxonomy
-							newContent = __('No terms found', 'pmp-theme');
-
-							// Similar to custom fields, don't save placeholder to attribute
-							setTimeout(() => {
-								setAttributes({ headingTitle: '' });
-							}, 0);
-						}
-					}
-				}
-				break;
-			default:
-				newContent = '';
-				break;
-		}
-
-		setAttributes({ headingTitle: newContent });
-	}, [
-		isDynamic,
-		dynamicSource,
-		sourceField,
-		customField,
-		customInput,
-		customMetaKey,
-		postData,
-		postTerms,
-		acfFieldValue,
-		setAttributes,
-	]);
+    // Query-loop instances share attributes. Compute a preview per post without
+    // writing each post's title back into that shared block template.
+    const previewContent = (() => {
+        if (!isDynamic) return headingTitle;
+        if (dynamicSource === 'custom-input') return customInput || '';
+        if (dynamicSource === 'custom-field') return String(acfFieldValue ?? postData?.meta?.[customField] ?? '');
+        if (dynamicSource === 'custom-meta') return String(postData?.meta?.[customMetaKey] ?? postTerms?.map((term) => term.name).join(', ') ?? '');
+        const value = postData?.[sourceField];
+        return typeof value === 'string' ? value : value?.rendered || '';
+    })();
 
 	return (
 		<>
@@ -386,7 +307,7 @@ const Edit = ({ attributes, setAttributes, context }) => {
 				<RichText
 					tagName={headingTag}
 					className="heading-text"
-					value={headingTitle}
+					value={previewContent}
 					onChange={(content) => setAttributes({ headingTitle: content })}
 					placeholder={__('Write heading...', 'pmp-theme')}
 					disabled={isDynamic}

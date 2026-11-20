@@ -90,7 +90,6 @@ class PracticeArea extends BasePostType {
 			],
 			'card_image' => [
 				'type' => 'integer',
-				'description'       => 'Image ID for the practice area card.',
 				'show_in_rest'     => true,
 				'single'           => true,
 				'description'       => 'Attachment ID for the card image.',

@@ -2,6 +2,7 @@
  * WordPress dependencies
  */
 import { __ } from '@wordpress/i18n';
+import { createBlock } from '@wordpress/blocks';
 import { useBlockProps, InnerBlocks, store as blockEditorStore } from '@wordpress/block-editor';
 import { useSelect, useDispatch } from '@wordpress/data';
 import { useEffect } from '@wordpress/element';
@@ -388,71 +389,26 @@ const ContentCardBlockEdit = (props) => {
 		];
 	}
 
-	const { removeBlock, insertBlock } = useDispatch(blockEditorStore);
-	const { getBlock } = useSelect((select) => select(blockEditorStore));
-
-	useEffect(() => {
-		if (postType === 'pmp_practice_area') {
-			const wantsCardImage = showCardImage !== false;
-			const wantsFeaturedImage = showFeaturedImage !== false;
-			const currentBlock = getBlock(clientId);
-			if (!currentBlock) return;
-
-			const innerBlocks = currentBlock.innerBlocks || [];
-
-			// Find existing blocks
-			const featuredImageBlock = innerBlocks.find(
-				(block) => block.name === 'core/post-featured-image',
-			);
-			const cardImageBlock = innerBlocks.find(
-				(block) =>
-					block.name === 'pmp/post-meta' && block.attributes?.metaKey === 'card_image',
-			);
-
-			// Always insert at the top
-			const insertPosition = 0;
-
-			const updateBlocks = async () => {
-				// Handle Card Image for Practice Areas
-				if (wantsCardImage) {
-					// First remove featured image if it exists
-					if (featuredImageBlock) {
-						await removeBlock(featuredImageBlock.clientId);
-					}
-
-					// Then add card image if it doesn't exist
-					if (!cardImageBlock) {
-						const newCardImageBlock = wp.blocks.createBlock('pmp/post-meta', {
-							metaKey: 'card_image',
-							isImage: true,
-							sizeSlug: 'large',
-						});
-						await insertBlock(newCardImageBlock, insertPosition, clientId);
-					}
-				} else {
-					// Remove card image if it exists
-					if (cardImageBlock) {
-						await removeBlock(cardImageBlock.clientId);
-					}
-
-					// Handle featured image visibility
-					if (wantsFeaturedImage && !featuredImageBlock) {
-						const newFeaturedImageBlock = wp.blocks.createBlock(
-							'core/post-featured-image',
-							{
-								sizeSlug: 'large',
-							},
-						);
-						await insertBlock(newFeaturedImageBlock, insertPosition, clientId);
-					} else if (!wantsFeaturedImage && featuredImageBlock) {
-						await removeBlock(featuredImageBlock.clientId);
-					}
-				}
-			};
-
-			updateBlocks();
-		}
-	}, [showCardImage, showFeaturedImage, postType, clientId, getBlock, insertBlock, removeBlock]);
+    const { replaceInnerBlocks } = useDispatch(blockEditorStore);
+    const currentInnerBlocks = useSelect(
+        (select) => select(blockEditorStore).getBlocks(clientId),
+        [clientId],
+    );
+    useEffect(() => {
+        if (postType !== 'pmp_practice_area') return;
+        const isImageBlock = (block) => block.name === 'core/post-featured-image' ||
+            (block.name === 'pmp/post-meta' && block.attributes.metaKey === 'card_image');
+        const imageBlocks = currentInnerBlocks.filter(isImageBlock);
+        const wantsCard = showCardImage !== false;
+        const desiredName = wantsCard ? 'pmp/post-meta' : showFeaturedImage !== false ? 'core/post-featured-image' : null;
+        if ((!desiredName && imageBlocks.length === 0) ||
+            (imageBlocks.length === 1 && imageBlocks[0].name === desiredName)) return;
+        const existing = imageBlocks.find((block) => block.name === desiredName);
+        const image = desiredName ? existing || createBlock(desiredName, wantsCard ?
+            { metaKey: 'card_image', isImage: true, sizeSlug: 'large' } : { sizeSlug: 'large' }) : null;
+        // One atomic replacement avoids overlapping async remove/insert operations.
+        replaceInnerBlocks(clientId, [ ...(image ? [image] : []), ...currentInnerBlocks.filter((block) => !isImageBlock(block)) ], false);
+    }, [showCardImage, showFeaturedImage, postType, clientId, currentInnerBlocks, replaceInnerBlocks]);
 
 	// Define allowed blocks
 	const ALLOWED_BLOCKS = [
@@ -470,6 +426,7 @@ const ContentCardBlockEdit = (props) => {
 		'core/post-author-name',
 		'core/post-date',
 		'pmp/post-meta',
+		'pmp/advanced-heading',
 		'pmp/post-time-to-read',
 		'core/post-content',
 		'core/details',
