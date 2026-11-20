@@ -3,7 +3,8 @@
  */
 import { __ } from '@wordpress/i18n';
 import { useBlockProps, InnerBlocks, store as blockEditorStore } from '@wordpress/block-editor';
-import { useSelect } from '@wordpress/data';
+import { useSelect, useDispatch } from '@wordpress/data';
+import { useEffect } from '@wordpress/element';
 
 /**
  * Internal dependencies
@@ -15,6 +16,14 @@ import { removeBlockByName, updateAttributesBlockByName } from '../../block-filt
  */
 const DEFAULT_TEMPLATE = [
 	['core/post-featured-image', { sizeSlug: 'large' }],
+	[
+		'pmp/post-meta',
+		{
+			metaKey: 'card_image',
+			isImage: true,
+			sizeSlug: 'large',
+		},
+	],
 	['core/post-terms', { term: 'category' }],
 	['core/post-title', { isLink: true }],
 	[
@@ -231,6 +240,7 @@ const ContentCardBlockEdit = (props) => {
 		useSecondaryTitle,
 		variationName,
 		showFeaturedImage,
+		showCardImage,
 		showPostExcerpt,
 		showPostAuthor,
 		showPostDate,
@@ -244,7 +254,6 @@ const ContentCardBlockEdit = (props) => {
 	const blockProps = useBlockProps();
 
 	let template = DEFAULT_TEMPLATE;
-
 	if (variationName === 'cover') {
 		template = COVER_TEMPLATE;
 	}
@@ -259,6 +268,50 @@ const ContentCardBlockEdit = (props) => {
 
 	blockProps.className += ` ${variationClassName}`;
 
+	// Handle Featured Image and Card Image for Practice Areas
+	if (postType === 'pmp_practice_area') {
+		const wantsCardImage = showCardImage !== false;
+		const wantsFeaturedImage = showFeaturedImage !== false;
+		if (wantsCardImage) {
+			// When card image is preferred, drop featured image and ensure card image exists
+			template = removeBlockByName('core/post-featured-image', template);
+
+			const hasCardImage = template.some(
+				([name, attrs]) => name === 'pmp/post-meta' && attrs?.metaKey === 'card_image',
+			);
+
+			if (!hasCardImage) {
+				template.unshift([
+					'pmp/post-meta',
+					{
+						metaKey: 'card_image',
+						isImage: true,
+						sizeSlug: 'large',
+					},
+				]);
+			}
+		} else {
+			// When card image is explicitly disabled, remove it and respect featured image toggle
+			template = removeBlockByName('pmp/post-meta', template, { metaKey: 'card_image' });
+			if (!wantsFeaturedImage) {
+				template = removeBlockByName('core/post-featured-image', template);
+			} else {
+				const hasFeaturedImage = template.some(
+					([name]) => name === 'core/post-featured-image',
+				);
+				if (!hasFeaturedImage) {
+					template.unshift(['core/post-featured-image', { sizeSlug: 'large' }]);
+				}
+			}
+		}
+	} else {
+		// For non-practice areas, always remove card image and handle featured image
+		template = removeBlockByName('pmp/post-meta', template, { metaKey: 'card_image' });
+		if (showFeaturedImage === false) {
+			template = removeBlockByName('core/post-featured-image', template);
+		}
+	}
+
 	// Hide Post Title
 	if (useSecondaryTitle || (showPostTitle !== undefined && !showPostTitle)) {
 		template = removeBlockByName('core/post-title', template);
@@ -267,11 +320,6 @@ const ContentCardBlockEdit = (props) => {
 	// Hide Post Title
 	if (!useSecondaryTitle) {
 		template = removeBlockByName('pmp/post-meta', template, 'isTitle', true);
-	}
-
-	// Hide Featured Image
-	if (showFeaturedImage !== undefined && !showFeaturedImage) {
-		template = removeBlockByName('core/post-featured-image', template);
 	}
 
 	// Hide Post Excerpt
@@ -340,9 +388,102 @@ const ContentCardBlockEdit = (props) => {
 		];
 	}
 
+	const { removeBlock, insertBlock } = useDispatch(blockEditorStore);
+	const { getBlock } = useSelect((select) => select(blockEditorStore));
+
+	useEffect(() => {
+		if (postType === 'pmp_practice_area') {
+			const wantsCardImage = showCardImage !== false;
+			const wantsFeaturedImage = showFeaturedImage !== false;
+			const currentBlock = getBlock(clientId);
+			if (!currentBlock) return;
+
+			const innerBlocks = currentBlock.innerBlocks || [];
+
+			// Find existing blocks
+			const featuredImageBlock = innerBlocks.find(
+				(block) => block.name === 'core/post-featured-image',
+			);
+			const cardImageBlock = innerBlocks.find(
+				(block) =>
+					block.name === 'pmp/post-meta' && block.attributes?.metaKey === 'card_image',
+			);
+
+			// Always insert at the top
+			const insertPosition = 0;
+
+			const updateBlocks = async () => {
+				// Handle Card Image for Practice Areas
+				if (wantsCardImage) {
+					// First remove featured image if it exists
+					if (featuredImageBlock) {
+						await removeBlock(featuredImageBlock.clientId);
+					}
+
+					// Then add card image if it doesn't exist
+					if (!cardImageBlock) {
+						const newCardImageBlock = wp.blocks.createBlock('pmp/post-meta', {
+							metaKey: 'card_image',
+							isImage: true,
+							sizeSlug: 'large',
+						});
+						await insertBlock(newCardImageBlock, insertPosition, clientId);
+					}
+				} else {
+					// Remove card image if it exists
+					if (cardImageBlock) {
+						await removeBlock(cardImageBlock.clientId);
+					}
+
+					// Handle featured image visibility
+					if (wantsFeaturedImage && !featuredImageBlock) {
+						const newFeaturedImageBlock = wp.blocks.createBlock(
+							'core/post-featured-image',
+							{
+								sizeSlug: 'large',
+							},
+						);
+						await insertBlock(newFeaturedImageBlock, insertPosition, clientId);
+					} else if (!wantsFeaturedImage && featuredImageBlock) {
+						await removeBlock(featuredImageBlock.clientId);
+					}
+				}
+			};
+
+			updateBlocks();
+		}
+	}, [showCardImage, showFeaturedImage, postType, clientId, getBlock, insertBlock, removeBlock]);
+
+	// Define allowed blocks
+	const ALLOWED_BLOCKS = [
+		'core/post-featured-image',
+		'core/post-title',
+		'core/post-excerpt',
+		'core/post-terms',
+		'core/buttons',
+		'core/button',
+		'core/read-more',
+		'core/group',
+		'core/column',
+		'core/columns',
+		'core/paragraph',
+		'core/post-author-name',
+		'core/post-date',
+		'pmp/post-meta',
+		'pmp/post-time-to-read',
+		'core/post-content',
+		'core/details',
+	];
+
 	return (
 		<div {...blockProps}>
-			<InnerBlocks template={template} orientation="horizontal" templateLock={false} />
+			<InnerBlocks
+				template={template}
+				orientation="horizontal"
+				templateLock={false} // Allow full editing capabilities
+				allowedBlocks={ALLOWED_BLOCKS}
+				// renderAppender
+			/>
 		</div>
 	);
 };

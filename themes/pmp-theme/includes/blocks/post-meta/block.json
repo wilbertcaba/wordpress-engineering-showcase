@@ -6,7 +6,7 @@
   "category": "theme",
   "description": "Display custom post meta value.",
   "textdomain": "pmp-theme",
-  "parent": ["core/post-template"],
+  "parent": ["core/post-template", "pmp/content-card-template"],
   "usesContext": ["postId", "postType"],
   "attributes": {
     "textAlign": {
@@ -26,6 +26,14 @@
     "isTitle": {
       "type": "boolean",
       "default": false
+    },
+    "isImage": {
+      "type": "boolean",
+      "default": false
+    },
+    "sizeSlug": {
+      "type": "string",
+      "default": "large"
     }
   },
   "supports": {

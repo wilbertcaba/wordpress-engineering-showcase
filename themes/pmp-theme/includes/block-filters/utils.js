@@ -60,29 +60,43 @@ export const useTaxonomies = (postType) => {
  * @returns {string[]} An array of new blocks.
  */
 export function removeBlockByName(blockName, template, hasAttribute = '', attributeValue = '') {
-	const filtered = [];
-
-	if (Array.isArray(template)) {
-		template.map((item) => {
-			if (Array.isArray(item)) {
-				if (!item.includes(blockName) && item[2] !== undefined) {
-					const innerBlocks = removeBlockByName(blockName, item[2]);
-					filtered.push([item[0], item[1], innerBlocks]);
-				} else if (!item.includes(blockName)) {
-					const checkAttributes =
-						item[1] !== undefined && item[1][hasAttribute] !== undefined
-							? item[1][hasAttribute] === attributeValue
-							: false;
-					if (!checkAttributes) {
-						filtered.push(item);
-					}
-				}
-			}
-			return filtered;
-		});
+	if (!Array.isArray(template)) {
+		return template;
 	}
 
-	return filtered;
+	return template.reduce((filtered, item) => {
+		if (!Array.isArray(item)) {
+			return filtered;
+		}
+
+		const [name, attrs, innerBlocks] = item;
+		const updatedInnerBlocks = Array.isArray(innerBlocks)
+			? removeBlockByName(blockName, innerBlocks, hasAttribute, attributeValue)
+			: innerBlocks;
+
+		let shouldRemove = name === blockName;
+
+		if (shouldRemove && hasAttribute) {
+			if (typeof hasAttribute === 'object') {
+				const attributeEntries = Object.entries(hasAttribute);
+				shouldRemove = attributeEntries.every(([key, value]) => attrs?.[key] === value);
+			} else {
+				shouldRemove = attrs?.[hasAttribute] === attributeValue;
+			}
+		}
+
+		if (!shouldRemove) {
+			if (Array.isArray(updatedInnerBlocks)) {
+				filtered.push([name, attrs, updatedInnerBlocks]);
+			} else if (attrs !== undefined) {
+				filtered.push([name, attrs]);
+			} else {
+				filtered.push([name]);
+			}
+		}
+
+		return filtered;
+	}, []);
 }
 
 /**

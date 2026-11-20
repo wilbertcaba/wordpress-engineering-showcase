@@ -61,6 +61,10 @@ const additionalAttributes = {
 		type: 'boolean',
 		default: true,
 	},
+	showCardImage: {
+		type: 'boolean',
+		default: false,
+	},
 };
 /**
  * BlockEdit
@@ -84,6 +88,7 @@ const BlockEdit = (props) => {
 		showPostExcerpt,
 		showPostAuthor,
 		showPostDate,
+		showCardImage,
 		showReadingTime,
 		showTaxonomy,
 		showMore,
@@ -299,7 +304,38 @@ const BlockEdit = (props) => {
 					}
 					checked={showFeaturedImage}
 					onChange={(value) => {
-						setAttributes({ showFeaturedImage: value });
+						setAttributes({
+							showFeaturedImage: value,
+							// If enabling featured image, disable card image
+							...(value && { showCardImage: false }),
+						});
+					}}
+				/>,
+			);
+		}
+
+		// Show Card Image control only for Practice Areas
+		if (
+			!['vertically-stacked-no-image-centered', 'horizontally-stacked-no-image'].includes(
+				variationName,
+			) &&
+			postType === 'pmp_practice_area'
+		) {
+			displayControls.push(
+				<ToggleControl
+					label={__('Show Card Image', 'pmp-theme')}
+					help={
+						showCardImage
+							? __('Has card image displayed.', 'pmp-theme')
+							: __('Has card image hidden.', 'pmp-theme')
+					}
+					checked={showCardImage}
+					onChange={(value) => {
+						setAttributes({
+							showCardImage: value,
+							// If enabling card image, disable featured image
+							...(value && { showFeaturedImage: false }),
+						});
 					}}
 				/>,
 			);
@@ -436,6 +472,7 @@ const providesContext = (settings, name) => {
 			showReadingTime: 'showReadingTime',
 			showTaxonomy: 'showTaxonomy',
 			showMore: 'showMore',
+			showCardImage: 'showCardImage',
 		};
 	}
 

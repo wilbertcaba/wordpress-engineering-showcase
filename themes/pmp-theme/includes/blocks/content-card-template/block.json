@@ -1,6 +1,6 @@
 {
   "$schema": "https://schemas.wp.org/trunk/block.json",
-  "apiVersion": 2,
+  "apiVersion": 3,
   "title": "Content Card Template",
   "description": "Content Card Template",
   "textdomain": "pmp-theme",
@@ -22,7 +22,8 @@
     "showPostDate",
     "showReadingTime",
     "showTaxonomy",
-    "showMore"
+    "showMore",
+    "showCardImage"
   ],
   "supports": {
     "html": false,

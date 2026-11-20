@@ -21,11 +21,25 @@ $wrapper_attributes  = get_block_wrapper_attributes( [ 'class' => $wrapper_class
 $meta_value = get_post_meta( $block->context['postId'], $attributes['metaKey'], true );
 $is_link    = $attributes['isLink'] ?? false;
 $is_title   = $attributes['isTitle'] ?? false;
+$is_image   = $attributes['isImage'] ?? false;
+$size_slug  = $attributes['sizeSlug'] ?? 'large';
 
 ?>
 
 <div <?php echo $wrapper_attributes; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
-	<?php if ( $is_link && $is_title ) : ?>
+	<?php if ( $is_image && ! empty( $meta_value ) ) : ?>
+		<?php
+		echo wp_get_attachment_image(
+			$meta_value,
+			$size_slug,
+			false,
+			[
+				'class' => 'wp-block-post-meta-image',
+				'style' => 'width:100%;height:auto;',
+			]
+		);
+		?>
+	<?php elseif ( $is_link && $is_title ) : ?>
 		<h2 class="wp-block-post-title">
 			<a href="<?php echo esc_url( get_the_permalink() ); ?>" target="_self"><?php echo $meta_value ? esc_html( $meta_value ) : esc_html( get_the_title() ); ?></a>
 		</h2>
