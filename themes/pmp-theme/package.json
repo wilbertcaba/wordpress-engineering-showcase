@@ -5,7 +5,7 @@
   "scripts": {
     "build": "10up-toolkit build",
     "watch": "10up-toolkit watch --port=5000",
-    "lint-js": "10up-toolkit lint-js"
+    "lint-js": "eslint --no-eslintrc --config eslint-showcase.cjs assets/js includes --ext .js"
   },
   "devDependencies": {
     "10up-toolkit": "5.2.3",
@@ -15,7 +15,7 @@
   "dependencies": {
     "@10up/block-components": "1.17.6",
     "classnames": "2.5.1",
-    "lodash": "4.17.21"
+    "lodash": "4.18.1"
   },
   "10up-toolkit": {
     "useBlockAssets": true,
@@ -25,6 +25,12 @@
     }
   },
   "allowScripts": {
-    "sharp@0.32.6": true
+    "sharp@0.35.5": true
+  },
+  "overrides": {
+    "postcss": "8.5.33",
+    "sharp": "0.35.5",
+    "serialize-javascript": "7.1.3",
+    "prettier": "2.6.2"
   }
 }

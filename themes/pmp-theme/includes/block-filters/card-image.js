@@ -60,20 +60,15 @@ const CardImagePanel = () => {
 						<>
 							{cardImageId && imageUrl() ? (
 								<div style={{ marginBottom: 8 }}>
-									<img
-										src={imageUrl()}
-										alt=""
-										style={{ maxWidth: '100%', height: 'auto' }}
-									/>
+									<img src={imageUrl()} alt="" style={{ maxWidth: '100%', height: 'auto' }} />
 								</div>
 							) : null}
 							<Button variant="primary" onClick={open}>
-								{cardImageId
-									? __('Replace image', 'pmp-theme')
-									: __('Select image', 'pmp-theme')}
+								{cardImageId ? __('Replace image', 'pmp-theme') : __('Select image', 'pmp-theme')}
 							</Button>
 							{cardImageId ? (
-								<Button variant="tertiary"
+								<Button
+									variant="tertiary"
 									icon="no"
 									label={__('Remove image', 'pmp-theme')}
 									onClick={() => onCustomMetaChange('card_image', 0)}

@@ -34,7 +34,11 @@ const Edit = ({ attributes, setAttributes, context }) => {
 			);
 
 			// Also fetch post meta
-			const meta = select('core').getEditedEntityRecord('postType', context.postType, context.postId)?.meta;
+			const meta = select('core').getEditedEntityRecord(
+				'postType',
+				context.postType,
+				context.postId,
+			)?.meta;
 
 			return {
 				...post,
@@ -47,12 +51,7 @@ const Edit = ({ attributes, setAttributes, context }) => {
 	// Get taxonomy terms for this post
 	const postTerms = useSelect(
 		(select) => {
-			if (
-				!isDynamic ||
-				!context.postId ||
-				dynamicSource !== 'custom-meta' ||
-				!customMetaKey
-			) {
+			if (!isDynamic || !context.postId || dynamicSource !== 'custom-meta' || !customMetaKey) {
 				return null;
 			}
 
@@ -90,7 +89,11 @@ const Edit = ({ attributes, setAttributes, context }) => {
 
 			// If ACF store doesn't work, try alternative methods
 			// 1. Try core editor's meta data
-			const meta = select('core').getEditedEntityRecord('postType', context.postType, context.postId)?.meta;
+			const meta = select('core').getEditedEntityRecord(
+				'postType',
+				context.postType,
+				context.postId,
+			)?.meta;
 			if (meta && meta[customField] !== undefined) {
 				return meta[customField];
 			}
@@ -157,17 +160,20 @@ const Edit = ({ attributes, setAttributes, context }) => {
 		[context.postType],
 	);
 
-
-    // Query-loop instances share attributes. Compute a preview per post without
-    // writing each post's title back into that shared block template.
-    const previewContent = (() => {
-        if (!isDynamic) return headingTitle;
-        if (dynamicSource === 'custom-input') return customInput || '';
-        if (dynamicSource === 'custom-field') return String(acfFieldValue ?? postData?.meta?.[customField] ?? '');
-        if (dynamicSource === 'custom-meta') return String(postData?.meta?.[customMetaKey] ?? postTerms?.map((term) => term.name).join(', ') ?? '');
-        const value = postData?.[sourceField];
-        return typeof value === 'string' ? value : value?.rendered || '';
-    })();
+	// Query-loop instances share attributes. Compute a preview per post without
+	// writing each post's title back into that shared block template.
+	const previewContent = (() => {
+		if (!isDynamic) return headingTitle;
+		if (dynamicSource === 'custom-input') return customInput || '';
+		if (dynamicSource === 'custom-field')
+			return String(acfFieldValue ?? postData?.meta?.[customField] ?? '');
+		if (dynamicSource === 'custom-meta')
+			return String(
+				postData?.meta?.[customMetaKey] ?? postTerms?.map((term) => term.name).join(', ') ?? '',
+			);
+		const value = postData?.[sourceField];
+		return typeof value === 'string' ? value : value?.rendered || '';
+	})();
 
 	return (
 		<>

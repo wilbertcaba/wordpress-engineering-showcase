@@ -54,11 +54,7 @@ const DEFAULT_TEMPLATE = [
 	[
 		'core/group',
 		{ className: 'wp-block-pmp-content-card-template__post-meta' },
-		[
-			['core/post-date', { format: 'd.M.Y' }],
-			['core/post-author-name'],
-			['pmp/post-time-to-read'],
-		],
+		[['core/post-date', { format: 'd.M.Y' }], ['core/post-author-name'], ['pmp/post-time-to-read']],
 	],
 ];
 
@@ -216,11 +212,6 @@ const HORIZONTAL_NO_IMAGE_TEMPLATE = [
 	],
 ];
 
-
-
-
-
-
 /**
  * Edit component.
  * See https://wordpress.org/gutenberg/handbook/designers-developers/developers/block-api/block-edit-save/#edit
@@ -250,7 +241,6 @@ const ContentCardBlockEdit = (props) => {
 		showMore,
 	} = context;
 	let variationClassName = `variation-${variationName}`;
-
 
 	const blockProps = useBlockProps();
 
@@ -297,9 +287,7 @@ const ContentCardBlockEdit = (props) => {
 			if (!wantsFeaturedImage) {
 				template = removeBlockByName('core/post-featured-image', template);
 			} else {
-				const hasFeaturedImage = template.some(
-					([name]) => name === 'core/post-featured-image',
-				);
+				const hasFeaturedImage = template.some(([name]) => name === 'core/post-featured-image');
 				if (!hasFeaturedImage) {
 					template.unshift(['core/post-featured-image', { sizeSlug: 'large' }]);
 				}
@@ -381,34 +369,51 @@ const ContentCardBlockEdit = (props) => {
 		});
 
 		template = [
-			[
-				'core/details',
-				{ summary: '', className: 'content-display-accordion-item' },
-				template,
-			],
+			['core/details', { summary: '', className: 'content-display-accordion-item' }, template],
 		];
 	}
 
-    const { replaceInnerBlocks } = useDispatch(blockEditorStore);
-    const currentInnerBlocks = useSelect(
-        (select) => select(blockEditorStore).getBlocks(clientId),
-        [clientId],
-    );
-    useEffect(() => {
-        if (postType !== 'pmp_practice_area') return;
-        const isImageBlock = (block) => block.name === 'core/post-featured-image' ||
-            (block.name === 'pmp/post-meta' && block.attributes.metaKey === 'card_image');
-        const imageBlocks = currentInnerBlocks.filter(isImageBlock);
-        const wantsCard = showCardImage !== false;
-        const desiredName = wantsCard ? 'pmp/post-meta' : showFeaturedImage !== false ? 'core/post-featured-image' : null;
-        if ((!desiredName && imageBlocks.length === 0) ||
-            (imageBlocks.length === 1 && imageBlocks[0].name === desiredName)) return;
-        const existing = imageBlocks.find((block) => block.name === desiredName);
-        const image = desiredName ? existing || createBlock(desiredName, wantsCard ?
-            { metaKey: 'card_image', isImage: true, sizeSlug: 'large' } : { sizeSlug: 'large' }) : null;
-        // One atomic replacement avoids overlapping async remove/insert operations.
-        replaceInnerBlocks(clientId, [ ...(image ? [image] : []), ...currentInnerBlocks.filter((block) => !isImageBlock(block)) ], false);
-    }, [showCardImage, showFeaturedImage, postType, clientId, currentInnerBlocks, replaceInnerBlocks]);
+	const { replaceInnerBlocks } = useDispatch(blockEditorStore);
+	const currentInnerBlocks = useSelect(
+		(select) => select(blockEditorStore).getBlocks(clientId),
+		[clientId],
+	);
+	useEffect(() => {
+		if (postType !== 'pmp_practice_area') return;
+		const isImageBlock = (block) =>
+			block.name === 'core/post-featured-image' ||
+			(block.name === 'pmp/post-meta' && block.attributes.metaKey === 'card_image');
+		const imageBlocks = currentInnerBlocks.filter(isImageBlock);
+		const wantsCard = showCardImage !== false;
+		const desiredName = wantsCard
+			? 'pmp/post-meta'
+			: showFeaturedImage !== false
+			? 'core/post-featured-image'
+			: null;
+		if (
+			(!desiredName && imageBlocks.length === 0) ||
+			(imageBlocks.length === 1 && imageBlocks[0].name === desiredName)
+		)
+			return;
+		const existing = imageBlocks.find((block) => block.name === desiredName);
+		const imageAttributes = wantsCard
+			? { metaKey: 'card_image', isImage: true, sizeSlug: 'large' }
+			: { sizeSlug: 'large' };
+		const image = desiredName ? existing || createBlock(desiredName, imageAttributes) : null;
+		// One atomic replacement avoids overlapping async remove/insert operations.
+		replaceInnerBlocks(
+			clientId,
+			[...(image ? [image] : []), ...currentInnerBlocks.filter((block) => !isImageBlock(block))],
+			false,
+		);
+	}, [
+		showCardImage,
+		showFeaturedImage,
+		postType,
+		clientId,
+		currentInnerBlocks,
+		replaceInnerBlocks,
+	]);
 
 	// Define allowed blocks
 	const ALLOWED_BLOCKS = [

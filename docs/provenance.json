@@ -13,223 +13,321 @@
       "source": "includes/blocks/content-card-template/block.json",
       "destination": "themes/pmp-theme/includes/blocks/content-card-template/block.json",
       "sourceSha256": "fd7edd4b0879dcf87653c7791fd877ad6569ddb3dd2d91e6388407565458830d",
-      "adapted": false
+      "adapted": false,
+      "repository": "theme",
+      "extractedSha256": "fd7edd4b0879dcf87653c7791fd877ad6569ddb3dd2d91e6388407565458830d"
     },
     {
       "source": "includes/blocks/content-card-template/edit.js",
       "destination": "themes/pmp-theme/includes/blocks/content-card-template/edit.js",
       "sourceSha256": "497d366f84c8c2ae7f23b89d28b503aef1f40a140eb658029686efcc2872ef00",
-      "adapted": true
+      "adapted": true,
+      "repository": "theme",
+      "extractedSha256": "6c639e8f666d1da813c237a0fb40105099708ee5b0b015a65842a83623e6d4b2"
     },
     {
       "source": "includes/blocks/content-card-template/index.js",
       "destination": "themes/pmp-theme/includes/blocks/content-card-template/index.js",
       "sourceSha256": "e0bab29e91df1252e17d6b791b7ce800e1aa98f94ec37420f2f06c04ba991f7c",
-      "adapted": false
+      "adapted": false,
+      "repository": "theme",
+      "extractedSha256": "e0bab29e91df1252e17d6b791b7ce800e1aa98f94ec37420f2f06c04ba991f7c"
     },
     {
       "source": "includes/blocks/content-card-template/markup.php",
       "destination": "themes/pmp-theme/includes/blocks/content-card-template/markup.php",
       "sourceSha256": "4408bceace7a8af41e495406548e999e8378913ddc3cc1ef96774624306ee788",
-      "adapted": false
+      "adapted": false,
+      "repository": "theme",
+      "extractedSha256": "4408bceace7a8af41e495406548e999e8378913ddc3cc1ef96774624306ee788"
     },
     {
       "source": "includes/blocks/content-card-template/save.js",
       "destination": "themes/pmp-theme/includes/blocks/content-card-template/save.js",
       "sourceSha256": "2cdc4ff6c506c984ae2073299b5453f637b23c6f7a64d98b26699546b793712f",
-      "adapted": false
+      "adapted": false,
+      "repository": "theme",
+      "extractedSha256": "2cdc4ff6c506c984ae2073299b5453f637b23c6f7a64d98b26699546b793712f"
     },
     {
       "source": "includes/blocks/post-meta/block.json",
       "destination": "themes/pmp-theme/includes/blocks/post-meta/block.json",
       "sourceSha256": "9a1692bc5128faa5f537ccb9e0c6894b5dc17daa409a5a6372f85d423974faaf",
-      "adapted": false
+      "adapted": false,
+      "repository": "theme",
+      "extractedSha256": "9a1692bc5128faa5f537ccb9e0c6894b5dc17daa409a5a6372f85d423974faaf"
     },
     {
       "source": "includes/blocks/post-meta/edit.js",
       "destination": "themes/pmp-theme/includes/blocks/post-meta/edit.js",
       "sourceSha256": "c03bcf3928658fd8bae67793d0478547f28621f4a5eb4f175ef66d1d7062e98b",
-      "adapted": false
+      "adapted": true,
+      "repository": "theme",
+      "extractedSha256": "f3a2aa07f727f767cd181f6d1788a625f6f5f0667060a5b2b0233ae0be411e34"
     },
     {
       "source": "includes/blocks/post-meta/hooks.php",
       "destination": "themes/pmp-theme/includes/blocks/post-meta/hooks.php",
       "sourceSha256": "5d4cfa8f0edd9304c730ce36890f630554947331834a13d828341b51477ce49d",
-      "adapted": false
+      "adapted": false,
+      "repository": "theme",
+      "extractedSha256": "5d4cfa8f0edd9304c730ce36890f630554947331834a13d828341b51477ce49d"
     },
     {
       "source": "includes/blocks/post-meta/index.js",
       "destination": "themes/pmp-theme/includes/blocks/post-meta/index.js",
       "sourceSha256": "44dc5515fd18c15d021eb681a5e3ae02ad3919dad024ac621c4f8c49104f544b",
-      "adapted": false
+      "adapted": false,
+      "repository": "theme",
+      "extractedSha256": "44dc5515fd18c15d021eb681a5e3ae02ad3919dad024ac621c4f8c49104f544b"
     },
     {
       "source": "includes/blocks/post-meta/markup.php",
       "destination": "themes/pmp-theme/includes/blocks/post-meta/markup.php",
       "sourceSha256": "38ce11553beef7331dd107308e285506fffa320852d2317cc04aff77b171bcbd",
-      "adapted": false
+      "adapted": true,
+      "repository": "theme",
+      "extractedSha256": "f53d64d64b8555462229e6858a857894be95c16ecec985fce2f07bb4c599f054"
     },
     {
       "source": "includes/blocks/post-meta/save.js",
       "destination": "themes/pmp-theme/includes/blocks/post-meta/save.js",
       "sourceSha256": "ca2a4a7eb0d4bbb5392d55edde8911b2c71a90e0addd63e7ee6c2ebb2b0276d0",
-      "adapted": false
+      "adapted": false,
+      "repository": "theme",
+      "extractedSha256": "ca2a4a7eb0d4bbb5392d55edde8911b2c71a90e0addd63e7ee6c2ebb2b0276d0"
     },
     {
       "source": "includes/blocks/advanced-heading/block.json",
       "destination": "themes/pmp-theme/includes/blocks/advanced-heading/block.json",
       "sourceSha256": "de60b9aab10d597a522eadc7059b82f4f50b018c007f40ba0b67c1b37223f224",
-      "adapted": false
+      "adapted": false,
+      "repository": "theme",
+      "extractedSha256": "de60b9aab10d597a522eadc7059b82f4f50b018c007f40ba0b67c1b37223f224"
     },
     {
       "source": "includes/blocks/advanced-heading/edit.js",
       "destination": "themes/pmp-theme/includes/blocks/advanced-heading/edit.js",
       "sourceSha256": "177f33088ac7cf71fb44379895e632d455e851f991a97faaa0f681563b831dbd",
-      "adapted": false
+      "adapted": true,
+      "repository": "theme",
+      "extractedSha256": "4b41af016b13f9f1234e6c76507c9d9b74345d9d1c43f8d40464464bc94b270a"
     },
     {
       "source": "includes/blocks/advanced-heading/editor-style.css",
       "destination": "themes/pmp-theme/includes/blocks/advanced-heading/editor-style.css",
       "sourceSha256": "6ee1b56dda778e141d444708d0cae8cd58ef95e8bc25d16d12544bf578afc251",
-      "adapted": false
+      "adapted": false,
+      "repository": "theme",
+      "extractedSha256": "6ee1b56dda778e141d444708d0cae8cd58ef95e8bc25d16d12544bf578afc251"
     },
     {
       "source": "includes/blocks/advanced-heading/index.js",
       "destination": "themes/pmp-theme/includes/blocks/advanced-heading/index.js",
       "sourceSha256": "44dc5515fd18c15d021eb681a5e3ae02ad3919dad024ac621c4f8c49104f544b",
-      "adapted": false
+      "adapted": false,
+      "repository": "theme",
+      "extractedSha256": "44dc5515fd18c15d021eb681a5e3ae02ad3919dad024ac621c4f8c49104f544b"
     },
     {
       "source": "includes/blocks/advanced-heading/markup.php",
       "destination": "themes/pmp-theme/includes/blocks/advanced-heading/markup.php",
       "sourceSha256": "d206b0d7cd05b6c2d3ac3fd96ad1028edeae9a6f0a3d545045502463e2d0c241",
-      "adapted": false
+      "adapted": true,
+      "repository": "theme",
+      "extractedSha256": "9e5e0af2d709e90553d6f1b663bc8c3894989c440e10af174e4d2d3de21ab3c3"
     },
     {
       "source": "includes/blocks/advanced-heading/save.js",
       "destination": "themes/pmp-theme/includes/blocks/advanced-heading/save.js",
       "sourceSha256": "b004935939686b506180730f9a519fd0760fa5bfd675ddf5aa266268aecebcd7",
-      "adapted": false
+      "adapted": false,
+      "repository": "theme",
+      "extractedSha256": "b004935939686b506180730f9a519fd0760fa5bfd675ddf5aa266268aecebcd7"
     },
     {
       "source": "includes/blocks/advanced-heading/style.css",
       "destination": "themes/pmp-theme/includes/blocks/advanced-heading/style.css",
       "sourceSha256": "a12daec189bbcdbf8df9a163db86610a9c7d24e68b243dfedf6632cd2389f008",
-      "adapted": false
+      "adapted": false,
+      "repository": "theme",
+      "extractedSha256": "a12daec189bbcdbf8df9a163db86610a9c7d24e68b243dfedf6632cd2389f008"
     },
     {
       "source": "includes/block-filters/content-card-controls.js",
       "destination": "themes/pmp-theme/includes/block-filters/content-card-controls.js",
       "sourceSha256": "66f0212049324b648580dbdb3e2218dd5a5b4e80da94ef6c1fbf43e2eb8771b0",
-      "adapted": false
+      "adapted": false,
+      "repository": "theme",
+      "extractedSha256": "66f0212049324b648580dbdb3e2218dd5a5b4e80da94ef6c1fbf43e2eb8771b0"
     },
     {
       "source": "includes/block-filters/utils.js",
       "destination": "themes/pmp-theme/includes/block-filters/utils.js",
       "sourceSha256": "7845fd69ad61fede113363386f02a2b08b2e83dbc98ecac483a345431c2c2df2",
-      "adapted": false
+      "adapted": false,
+      "repository": "theme",
+      "extractedSha256": "7845fd69ad61fede113363386f02a2b08b2e83dbc98ecac483a345431c2c2df2"
     },
     {
       "source": "includes/block-variations/content-card.js",
       "destination": "themes/pmp-theme/includes/block-variations/content-card.js",
       "sourceSha256": "9ee855767b436a7840f49d0d0a10f2161600c95618c52597183517ab68a03790",
-      "adapted": false
+      "adapted": false,
+      "repository": "theme",
+      "extractedSha256": "9ee855767b436a7840f49d0d0a10f2161600c95618c52597183517ab68a03790"
     },
     {
       "source": "assets/css/blocks/custom/content-card-template.css",
       "destination": "themes/pmp-theme/assets/css/blocks/custom/content-card-template.css",
       "sourceSha256": "f7d4e813859e007c9dba79fc8b10e2515c4301c0df231d1229b0c0d73c209d0d",
-      "adapted": false
+      "adapted": false,
+      "repository": "theme",
+      "extractedSha256": "f7d4e813859e007c9dba79fc8b10e2515c4301c0df231d1229b0c0d73c209d0d"
     },
     {
       "source": "assets/css/blocks/core/query.css",
       "destination": "themes/pmp-theme/assets/css/blocks/core/query.css",
       "sourceSha256": "4a83c9a0596e887663b2f62bd3cd9e4002af38b59a21c4b6b4c92ffd3ca73992",
-      "adapted": false
+      "adapted": false,
+      "repository": "theme",
+      "extractedSha256": "4a83c9a0596e887663b2f62bd3cd9e4002af38b59a21c4b6b4c92ffd3ca73992"
     },
     {
       "source": "assets/css/frontend/global/media-queries.css",
       "destination": "themes/pmp-theme/assets/css/frontend/global/media-queries.css",
       "sourceSha256": "6f1b82c122fbb59bee8d1c66e983a30d8fb9e9386ca7861effccbb0c583878ac",
-      "adapted": false
+      "adapted": false,
+      "repository": "theme",
+      "extractedSha256": "6f1b82c122fbb59bee8d1c66e983a30d8fb9e9386ca7861effccbb0c583878ac"
     },
     {
       "source": "patterns/practice-areas-grid-variation-1.php",
       "destination": "themes/pmp-theme/patterns/practice-areas-grid-variation-1.php",
       "sourceSha256": "35ebad213215e72c252ece666394dfc540bf7fb51063069866ddb531041af243",
-      "adapted": false
+      "adapted": false,
+      "repository": "theme",
+      "extractedSha256": "35ebad213215e72c252ece666394dfc540bf7fb51063069866ddb531041af243"
     },
     {
       "source": "includes/blocks/content-display/block.json",
       "destination": "themes/pmp-theme/includes/blocks/content-display/block.json",
       "sourceSha256": "cc873ec35826278b19d40876ad1bf41fdef875dbf633499f4ed74781a0074835",
-      "adapted": false
+      "adapted": true,
+      "repository": "theme",
+      "extractedSha256": "7062272cfb4968507e3b763a3de4ad71c206d39c677cb60c7322785015b270f5"
     },
     {
       "source": "includes/blocks/content-display/save.js",
       "destination": "themes/pmp-theme/includes/blocks/content-display/save.js",
       "sourceSha256": "74a00823a6fbe4b3108de457eeca9fceffc45a8857952a48e802df4b766f04e9",
-      "adapted": false
+      "adapted": false,
+      "repository": "theme",
+      "extractedSha256": "74a00823a6fbe4b3108de457eeca9fceffc45a8857952a48e802df4b766f04e9"
     },
     {
       "source": "includes/blocks/content-display/markup.php",
       "destination": "themes/pmp-theme/includes/blocks/content-display/markup.php",
       "sourceSha256": "834253b691067cb03a731ea51a76be86fd9f3e2be99fc97b1f2ab50eeeedde99",
-      "adapted": false
+      "adapted": false,
+      "repository": "theme",
+      "extractedSha256": "834253b691067cb03a731ea51a76be86fd9f3e2be99fc97b1f2ab50eeeedde99"
     },
     {
       "source": "includes/blocks/content-display/variations/grid/markup.php",
       "destination": "themes/pmp-theme/includes/blocks/content-display/variations/grid/markup.php",
       "sourceSha256": "01528d71470f5ef8cd73f87265cfcb1c11530050cc0db9c0cd09dc9892d13132",
-      "adapted": false
+      "adapted": false,
+      "repository": "theme",
+      "extractedSha256": "01528d71470f5ef8cd73f87265cfcb1c11530050cc0db9c0cd09dc9892d13132"
     },
     {
       "source": "includes/blocks/content-display/variations/grid/style.css",
       "destination": "themes/pmp-theme/includes/blocks/content-display/variations/grid/style.css",
       "sourceSha256": "0ec9bb7d5af8037e41d15127e4c0249ee0d610c587190e13ee628cb724c776f5",
-      "adapted": false
+      "adapted": false,
+      "repository": "theme",
+      "extractedSha256": "0ec9bb7d5af8037e41d15127e4c0249ee0d610c587190e13ee628cb724c776f5"
     },
     {
       "source": "theme.json",
       "destination": "themes/pmp-theme/theme.json",
       "sourceSha256": "0f8581ea973c643af7d1af0ffe64a26586cede3f02f18becc39f909bbd299f7f",
-      "adapted": true
+      "adapted": true,
+      "repository": "theme",
+      "extractedSha256": "3720ea3558f093aeeb51d0d33b82c5076264f9040a943f62983ce6143d24c101"
     },
     {
       "source": "includes/classes/Module.php",
       "destination": "mu-plugins/pmp-plugin/includes/classes/Module.php",
       "sourceSha256": "e34656e00a340d8f1968697a0933fba456b1376615ff86f99d86da31d55141bb",
-      "adapted": false
+      "adapted": false,
+      "repository": "plugin",
+      "extractedSha256": "e34656e00a340d8f1968697a0933fba456b1376615ff86f99d86da31d55141bb"
     },
     {
       "source": "includes/classes/PostType/BasePostType.php",
       "destination": "mu-plugins/pmp-plugin/includes/classes/PostType/BasePostType.php",
       "sourceSha256": "3ba537e417c1063090c08d7c14eab01c495d5aa126ae32e90f328787799a8e94",
-      "adapted": false
+      "adapted": false,
+      "repository": "plugin",
+      "extractedSha256": "3ba537e417c1063090c08d7c14eab01c495d5aa126ae32e90f328787799a8e94"
     },
     {
       "source": "includes/classes/PostType/PracticeArea.php",
       "destination": "mu-plugins/pmp-plugin/includes/classes/PostType/PracticeArea.php",
       "sourceSha256": "1cd909fcba4dd9bf4115ca68738589248a1af8d03dfd6942e82e8400c347f352",
-      "adapted": true
+      "adapted": true,
+      "repository": "plugin",
+      "extractedSha256": "acb19b613ffa6596c528a29414d9c8ae058ce91df6e2f5105792d24eb1884271"
     },
     {
       "source": "includes/block-filters/card-image.js",
       "destination": "themes/pmp-theme/includes/block-filters/card-image.js",
       "sourceSha256": "8acf5388f0818baa4ff428ab7ffdbea4e0a4c45b3a07e6e8f9a32e1fdbbc006d",
-      "adapted": false
+      "adapted": true,
+      "repository": "theme",
+      "extractedSha256": "b6a785cb2220595817a48bfd115d08b63dd536f76c63ccbec0b2693efb6cf6b9"
     },
     {
       "source": "includes/blocks/post-meta/hooks.php",
       "destination": "themes/pmp-theme/includes/blocks/post-meta/hooks.php",
       "sourceSha256": "5d4cfa8f0edd9304c730ce36890f630554947331834a13d828341b51477ce49d",
-      "adapted": false
+      "adapted": false,
+      "repository": "theme",
+      "extractedSha256": "5d4cfa8f0edd9304c730ce36890f630554947331834a13d828341b51477ce49d"
     },
     {
       "source": "patterns/practice-areas-grid-variation-5.php",
       "destination": "themes/pmp-theme/patterns/practice-areas-grid-variation-5.php",
       "sourceSha256": "5a91ee6328d2c126e3ae81da3b7bdbda313a14357bd436bfbdad144e7b68fae7",
-      "adapted": false
+      "adapted": false,
+      "repository": "theme",
+      "extractedSha256": "5a91ee6328d2c126e3ae81da3b7bdbda313a14357bd436bfbdad144e7b68fae7"
+    },
+    {
+      "source": "includes/classes/Block/QueryBlock.php",
+      "destination": "themes/pmp-theme/includes/query-render.php",
+      "sourceSha256": "b47b92a18d6bca70ee2e40e38b1c2e843330cebab514811c12d54229d798f7e3",
+      "adapted": true,
+      "repository": "theme",
+      "extractedSha256": "90df86d864584f3b2b484ba147882a0a2e7a9f8dd8006d06e5cdf5408346c06d"
+    },
+    {
+      "source": "assets/css/frontend/components/patterns.css",
+      "destination": "themes/pmp-theme/assets/css/frontend/components/patterns.css",
+      "sourceSha256": "49f8392aba9c47e659cf335bcb1ba49b9b104ade2c0f4b1272ad86ba55532821",
+      "adapted": true,
+      "repository": "theme",
+      "extractedSha256": "655004f00d1d91108e94943daa76a689fa1945fb120650d3eea511d67590a523"
+    },
+    {
+      "source": "assets/css/frontend/editor-style-overrides.css",
+      "destination": "themes/pmp-theme/assets/css/frontend/editor-style-overrides.css",
+      "sourceSha256": "5c572de069568a7cd500af1d6c1b81abb271630b6d919c5b6996637c06c833e1",
+      "adapted": true,
+      "repository": "theme",
+      "extractedSha256": "247112c171fbec520fdf8ca0c4d71d8c4af7b885226af21960b1ec6ff3a3c765"
     }
   ],
   "notes": [
@@ -237,6 +335,33 @@
     "Removed unrelated post types and shadow-terms connections.",
     "Grid-only wrapper; retained original card templates for supported layouts.",
     "Original font assets replaced with system fonts; retained palette/spacing tokens.",
-    "Source copyright and attribution retained; publishing rights require owner review."
+    "Source copyright and attribution retained; publishing rights require owner review.",
+    "Bootstrap adapters preserve block interfaces without application-wide module discovery.",
+    "QueryBlock render filter retained separately, returning updated HTML explicitly.",
+    "After-only corrections are documented in docs/practice-areas-grid.md and a separate showcase commit.",
+    "Assets and typography are fictional/system-based; screenshots are not client-site reproductions.",
+    "extractedSha256 describes the final showcase file; sourceSha256 describes the original file at the recorded source revision."
+  ],
+  "baseline": {
+    "themeCommit": "625194e30f5d4fea8015235f141d08638ab35d1f",
+    "pluginCommit": "46d4f410c66189301f5b60b4f4c0528a8640de0e",
+    "showcaseTag": "practice-areas-grid-before"
+  },
+  "themeFeatureCommits": [
+    "ee2c9c565c10dc03000c69261b1d48c8a062a5d2",
+    "94f2440bb4323e5e5b312c17c30f01ca1f8ccbdb",
+    "a6bf02b6fb731a91c6f8258ff12acee6fc9f23a1",
+    "38df39a68e62409861d3775dc18d3451efb07b8d",
+    "042a3880bb49f019d93fdd901751012c54a06a43",
+    "ab32beb350138a97c0a7373f7a6a5f7c1ad657e5",
+    "712d84ae459e17840e3cf4cf35532e13c4f55e8a",
+    "d07ff4d8648dcfc891e1746d877c4fb91a7daaab",
+    "d90c5ae47389a2608eacd60c279e8f1249460b55",
+    "da9b0748143bad7683a572f177fb0fb02db5ec2c",
+    "f41b2f57f3db1cdab3e258105b4ea0f47e5318ab"
+  ],
+  "pluginFeatureCommits": [
+    "fea404a1af7f04593ecbf4ee6071d6bb04449029",
+    "ea8d4d95cd70717d68915dbe3d75ae84b0a8361f"
   ]
 }

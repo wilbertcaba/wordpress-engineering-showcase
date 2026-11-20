@@ -4,7 +4,14 @@ Create two **new, single-site** WordPress sites in Local: `showcase-before` and 
 
 Run `npm ci` and `npm run demo:prepare` from the showcase checkout first. This builds the after source and exports/builds the before tag.
 
-In each new site's wp-content folder, symlink `themes/pmp-theme` and `mu-plugins/pmp-plugin` to the corresponding directories below. Copy the small `mu-plugins/pmp-loader.php` loader into that site's mu-plugins directory. Do not replace its entire wp-content directory.
+From the showcase checkout, link only the required packages into each new site's wp-content directory:
+
+```sh
+npm run local:link -- before "/absolute/path/to/showcase-before/app/public"
+npm run local:link -- after "/absolute/path/to/showcase-after/app/public"
+```
+
+The script creates theme/plugin symlinks and copies the small MU loader. It refuses to replace existing package directories or a different loader. Do not replace a site's entire wp-content directory.
 
 | Site | Package source |
 | --- | --- |
