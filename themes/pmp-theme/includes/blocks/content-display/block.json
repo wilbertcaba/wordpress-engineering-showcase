@@ -1,0 +1,49 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "title": "Content Display",
+  "description": "Content Display",
+  "textdomain": "pmp-theme",
+  "name": "pmp/content-display",
+  "icon": "grid-view",
+  "category": "theme",
+  "usesContext": [
+    "postId",
+    "postType",
+    "queryId"
+  ],
+  "attributes": {
+    "variationName": {
+      "type": "string"
+    },
+    "cardVariationName": {
+      "type": "string"
+    },
+    "cardContentTypes": {
+      "type": "string"
+    },
+    "mode": {
+      "type": "string",
+      "default": "manual"
+    }
+  },
+  "providesContext": {
+    "displayVariationName": "variationName"
+  },
+  "supports": {
+    "align": [
+      "wide",
+      "full"
+    ],
+    "html": false,
+    "spacing": {
+      "margin": true,
+      "padding": true,
+      "__experimentalDefaultControls": {
+        "margin": false,
+        "padding": false
+      }
+    }
+  },
+  "editorScript": "file:./index.js"
+}

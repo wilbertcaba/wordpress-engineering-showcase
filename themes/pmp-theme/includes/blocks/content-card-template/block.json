@@ -1,0 +1,39 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "title": "Content Card Template",
+  "description": "Content Card Template",
+  "textdomain": "pmp-theme",
+  "name": "pmp/content-card-template",
+  "icon": "screenoptions",
+  "category": "theme",
+  "parent": ["core/query"],
+  "usesContext": [
+    "postId",
+    "postType",
+    "queryId",
+    "displayVariationName",
+    "variationName",
+    "showPostTitle",
+    "useSecondaryTitle",
+    "showFeaturedImage",
+    "showPostExcerpt",
+    "showPostAuthor",
+    "showPostDate",
+    "showReadingTime",
+    "showTaxonomy",
+    "showMore"
+  ],
+  "supports": {
+    "html": false,
+    "spacing": {
+      "margin": true,
+      "padding": true,
+      "__experimentalDefaultControls": {
+        "margin": false,
+        "padding": false
+      }
+    }
+  },
+  "editorScript": "file:./index.js"
+}

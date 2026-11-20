@@ -1,0 +1,30 @@
+{
+  "name": "pmp-theme-showcase",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "10up-toolkit build",
+    "watch": "10up-toolkit watch --port=5000",
+    "lint-js": "10up-toolkit lint-js"
+  },
+  "devDependencies": {
+    "10up-toolkit": "5.2.3",
+    "terser-webpack-plugin": "5.3.10",
+    "webpack": "5.101.3"
+  },
+  "dependencies": {
+    "@10up/block-components": "1.17.6",
+    "classnames": "2.5.1",
+    "lodash": "4.17.21"
+  },
+  "10up-toolkit": {
+    "useBlockAssets": true,
+    "entry": {
+      "frontend": "./assets/js/frontend.js",
+      "editor": "./assets/js/editor.js"
+    }
+  },
+  "allowScripts": {
+    "sharp@0.32.6": true
+  }
+}

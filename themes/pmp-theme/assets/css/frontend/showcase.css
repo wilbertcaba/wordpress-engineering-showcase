@@ -1,0 +1,16 @@
+@import url("global/media-queries.css");
+@import url("../blocks/custom/content-card-template.css");
+@import url("../../../includes/blocks/content-display/variations/grid/style.css");
+@import url("components/patterns.css");
+body { margin: 0; font-family: system-ui, sans-serif; }
+.showcase-header, .showcase-footer { padding: 24px 32px; background: #003366; color: white; }
+.showcase-header a, .showcase-footer a { color: white; }
+.showcase-header { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+main { padding: 32px; }
+.visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+a:focus-visible { outline: 3px solid #e59522; outline-offset: 4px; }
+.wp-block-post-template { list-style: none; padding: 0; }
+.wp-block-post-template.col { display: grid; grid-template-columns: 1fr; gap: 24px; }
+@media (min-width: 480px) { .wp-block-post-template.col { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 768px) { .wp-block-post-template.col { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (min-width: 1024px) { .wp-block-post-template.col { grid-template-columns: repeat(4, minmax(0, 1fr)); } }

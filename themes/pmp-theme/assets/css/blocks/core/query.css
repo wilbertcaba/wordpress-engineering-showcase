@@ -1,0 +1,9 @@
+.wp-block-query.has-negative-margin {
+	margin-top: -64px;
+	position: relative;
+	z-index: 2;
+
+	@media (--bp-large) {
+		margin-top: -72px;
+	}
+}

@@ -1,0 +1,63 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "name": "pmp/post-meta",
+  "title": "Post Meta",
+  "category": "theme",
+  "description": "Display custom post meta value.",
+  "textdomain": "pmp-theme",
+  "parent": ["core/post-template"],
+  "usesContext": ["postId", "postType"],
+  "attributes": {
+    "textAlign": {
+      "type": "string"
+    },
+    "metaKey": {
+      "type": "string"
+    },
+    "isEditable": {
+      "type": "boolean",
+      "default": false
+    },
+    "isLink": {
+      "type": "boolean",
+      "default": false
+    },
+    "isTitle": {
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "supports": {
+    "color": {
+      "gradients": true,
+      "__experimentalDefaultControls": {
+        "background": true,
+        "text": true
+      }
+    },
+    "html": false,
+    "spacing": {
+      "margin": true,
+      "padding": true,
+      "__experimentalDefaultControls": {
+        "margin": false,
+        "padding": false
+      }
+    },
+    "typography": {
+      "fontSize": true,
+      "lineHeight": true,
+      "__experimentalFontFamily": true,
+      "__experimentalFontWeight": true,
+      "__experimentalFontStyle": true,
+      "__experimentalTextTransform": true,
+      "__experimentalTextDecoration": true,
+      "__experimentalLetterSpacing": true,
+      "__experimentalDefaultControls": {
+        "fontSize": true
+      }
+    }
+  },
+  "editorScript": "file:./index.js"
+}

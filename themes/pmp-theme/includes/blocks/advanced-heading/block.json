@@ -1,0 +1,75 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 2,
+    "title": "Advanced Heading",
+    "description": "Add a heading with advanced styling options",
+    "textdomain": "pmp-theme",
+    "name": "pmp/advanced-heading",
+    "icon": "heading",
+    "category": "text",
+    "attributes": {
+        "headingTitle": {
+            "type": "string",
+            "default": ""
+        },
+        "headingTag": {
+            "type": "string",
+            "default": "h2"
+        },
+        "headingAlign": {
+            "type": "string",
+            "default": "left"
+        },
+        "seperatorStyle": {
+            "type": "string",
+            "default": "none"
+        },
+        "isDynamic": {
+            "type": "boolean",
+            "default": false
+        },
+        "dynamicSource": {
+            "type": "string",
+            "default": "current-post"
+        },
+        "sourceField": {
+            "type": "string",
+            "default": "title"
+        },
+        "customField": {
+            "type": "string",
+            "default": ""
+        },
+        "customInput": {
+            "type": "string",
+            "default": ""
+        },
+        "customMetaKey": {
+            "type": "string",
+            "default": ""
+        },
+        "linkToPost": {
+            "type": "boolean",
+            "default": false
+        }
+    },
+    "supports": {
+        "html": false,
+        "anchor": true,
+        "spacing": {
+            "margin": true,
+            "padding": true
+        },
+        "color": {
+            "text": true,
+            "background": true,
+            "link": true,
+            "gradients": true
+        }
+    },
+    "usesContext": ["postId", "postType"],
+    "editorScript": "file:./index.js",
+    "editorStyle": "file:./editor-style.css",
+    "style": "file:./style.css",
+    "render": "file:./markup.php"
+}

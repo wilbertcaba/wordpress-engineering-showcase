@@ -1,0 +1,12 @@
+node_modules/
+vendor/
+dist/
+.showcase/
+uploads/
+*.log
+.env*
+!.env.example
+.wp-env.override.json
+playwright-report/
+test-results/
+.DS_Store
