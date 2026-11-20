@@ -1,1 +1,67 @@
-/* Variation 5 does not exist in the baseline. */
+/* Practice Areas Grid Variations */
+
+.practice-areas-grid-variation-5 {
+
+	& .hero {
+
+		margin-bottom: 0;
+		margin-top: 0;
+		padding-bottom: 110px;
+		padding-left: var(--wp--preset--spacing--32);
+		padding-right: var(--wp--preset--spacing--32);
+		padding-top: var(--wp--preset--spacing--48);
+
+		@media (--bp-medium) {
+			padding-bottom: 156px;
+			padding-top: var(--wp--preset--spacing--88);
+		}
+
+	}
+
+	& .wp-block-pmp-content-card-template.variation-cover {
+
+		overflow: hidden;
+
+		& .wp-block-pmp-advanced-heading {
+			bottom: 0;
+			left: 50%;
+			padding: 0 var(--wp--preset--spacing--24);
+			position: absolute;
+			text-align: center;
+			transform: translateX(-50%);
+			width: 100%;
+
+			& h3 {
+
+				/* font-size: 18px; */
+				font-size: var(--wp--preset--font-size--medium);
+				font-weight: 500;
+			}
+		}
+
+		& figure::after {
+			background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%) !important;
+		}
+	}
+
+	& .pmp-post-meta-card_image {
+		height: 100%;
+		width: 100%;
+
+		& .wp-block-post-meta-image {
+			aspect-ratio: 1/1;
+			object-fit: cover;
+		}
+
+		&::after {
+			background: linear-gradient(0deg, #000 0%, rgba(0, 0, 0, 0) 100%);
+			bottom: 0;
+			content: "";
+			display: block;
+			height: 100%;
+			position: absolute;
+			width: 100%;
+			z-index: 0;
+		}
+	}
+}
