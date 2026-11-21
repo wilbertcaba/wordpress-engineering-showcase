@@ -117,6 +117,6 @@ Compatibility/correctness changes made for this showcase are separate from the h
 
 ## Verification
 
-[Unit tests](../../tests/toc.test.mjs) cover slugging, duplicate/reserved IDs, nesting, per-side spacing, and batched editor generation. [WordPress checks](../../tests/toc-integration.php) cover classic anchors, rendering agreement, escaping, CSS validation, shared-default inheritance and permissions, and automatic insertion for block/classic content. [Browser tests](../../tests/browser/toc.spec.mjs) exercise responsive placement, scroll highlighting, sticky behavior, keyboard expansion, static links, editor persistence, and shared-style controls.
+  [Unit tests](../../tests/toc.test.mjs) cover slugging, duplicate/reserved IDs, nesting, per-side spacing, and batched editor generation. [WordPress checks](../../tests/toc-integration.php) cover classic anchors, rendering agreement, escaping, CSS validation, shared-default inheritance and permissions, and automatic insertion for block/classic content. [Browser tests](../../tests/browser/toc.spec.mjs) exercise responsive placement, scroll highlighting, sticky behavior, keyboard expansion, static links, editor persistence, and shared-style controls.
 
 Run `SHOWCASE_RUNTIME=php npm run demo:check` for PHP integration checks, or omit the prefix for Docker. With both sites running, use `npm run test:browser -- --grep 'toc:'` for this feature’s browser checks. See the shared [verification record](../verification.md) for tested versions and runtime limitations.
