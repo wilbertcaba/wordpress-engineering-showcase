@@ -1,0 +1,287 @@
+/**
+ * Table of Contents block.
+ *
+ * Structural rules only. Colors, border, padding and typography defaults live
+ * in theme.json (styles.blocks["pmp/toc-block"]) so the Styles tab shows them
+ * as starting values. Per-item and active-state values arrive as custom
+ * properties set on the wrapper by edit.js and markup.php.
+ */
+
+@import "../../../assets/css/frontend/global/media-queries.css";
+
+.toc-block {
+	scroll-margin-top: var(--sticky-header-height, 150px);
+}
+
+.toc-block__title {
+	margin: 0 0 var(--wp--preset--spacing--12);
+}
+
+.toc-block__list {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.toc-block__list .toc-block__list {
+	margin-top: var(--toc-item-gap, 0);
+	padding-inline-start: var(--wp--preset--spacing--16);
+}
+
+.toc-block__item {
+	background: var(--toc-item-bg, transparent);
+	border-bottom: var(--toc-item-border-bottom, 0);
+	border-left: var(--toc-item-border-left, 0);
+	border-radius: var(--toc-item-radius, 0);
+	border-right: var(--toc-item-border-right, 0);
+	border-top: var(--toc-item-border-top, 0);
+	padding: var(--toc-item-padding, 0);
+}
+
+.toc-block__item + .toc-block__item {
+	margin-top: var(--toc-item-gap, 0);
+}
+
+.toc-block__link {
+	color: inherit;
+	display: block;
+	text-decoration: none;
+}
+
+.toc-block__link:hover,
+.toc-block__link:focus-visible {
+	text-decoration: underline;
+}
+
+/* Placement: desktop is 782px and up, where the sidebar column stacks. */
+@media (--wp-medium-max) {
+
+	.toc-block--desktop {
+		display: none;
+	}
+}
+
+@media (--wp-medium) {
+
+	.toc-block--mobile {
+		display: none;
+	}
+
+	/* --toc-sticky-top is set per instance by the "Sticky top offset" control; otherwise follow the measured header. */
+	.toc-block--sticky {
+		--toc-sticky-top-default: calc(var(--pmp-sticky-offset, var(--sticky-header-height, 0px)) + var(--wp--preset--spacing--16));
+
+		max-height: calc(100vh - var(--toc-sticky-top, var(--toc-sticky-top-default)) - var(--wp--preset--spacing--16));
+		overflow-y: auto;
+		position: sticky;
+		top: var(--toc-sticky-top, var(--toc-sticky-top-default));
+	}
+
+	/*
+	 * Inside something that already sticks, the TOC moves with it instead of
+	 * sticking again: inside a Sticky group (CSS), or any other sticky ancestor
+	 * (`toc-block--nested`, set by view.js).
+	 */
+	.is-pmp-sticky .toc-block--sticky,
+	.toc-block--sticky.toc-block--nested {
+		max-height: none;
+		overflow: visible;
+		position: static;
+	}
+
+	/* Scrollspy active state (desktop instances only). */
+	.toc-block--scrollspy .toc-block__item.is-active {
+		background: var(--toc-active-bg, var(--toc-item-bg, transparent));
+		border-bottom: var(--toc-item-border-bottom-active, var(--toc-item-border-bottom, 0));
+		border-left: var(--toc-item-border-left-active, var(--toc-item-border-left, 0));
+		border-right: var(--toc-item-border-right-active, var(--toc-item-border-right, 0));
+		border-top: var(--toc-item-border-top-active, var(--toc-item-border-top, 0));
+	}
+
+	.toc-block--scrollspy .is-active > .toc-block__link {
+		color: var(--toc-active-color, var(--wp--preset--color--secondary));
+		font-weight: var(--wp--custom--font-weight--bold);
+	}
+
+	.toc-block--scrollspy .has-active-child > .toc-block__link {
+		font-weight: var(--wp--custom--font-weight--bold);
+	}
+}
+
+/*
+ * Collapsible (the `collapsible` setting): the title is the toggle.
+ */
+.toc-block__details > .toc-block__summary {
+	align-items: center;
+	cursor: pointer;
+	display: flex;
+	justify-content: space-between;
+	list-style: none;
+	margin: 0;
+	min-height: 32px;
+
+	&::-webkit-details-marker {
+		display: none;
+	}
+
+	&::after {
+		content: "+";
+		font-size: 1.25rem;
+		font-weight: var(--wp--custom--font-weight--regular, 400);
+		letter-spacing: 0;
+	}
+}
+
+.toc-block__details[open] > .toc-block__summary {
+	margin-bottom: var(--wp--preset--spacing--8);
+
+	&::after {
+		content: "−";
+	}
+}
+
+/*
+ * Block styles (Styles panel): Numbered, Rail and Highlight.
+ *
+ * Each sets its own surface over the theme.json defaults, takes its colors
+ * from the palette, and still yields to the block's own settings: colors,
+ * spacing and border picked in the Styles tab are inline and win, and the
+ * active item follows the "Active" colors when they are set.
+ */
+.wp-block-pmp-toc-block:is(.is-style-numbered, .is-style-rail, .is-style-highlight) {
+	--toc-style-accent: var(--wp--preset--color--primary);
+	--toc-style-accent-ink: var(--wp--preset--color--primary-600, var(--wp--preset--color--primary));
+	--toc-style-text: var(--wp--preset--color--black);
+	--toc-style-muted: var(--wp--preset--color--gray-200);
+	--toc-style-line: color-mix(in sRGB, var(--wp--preset--color--secondary) 10%, transparent);
+
+	border: 0;
+	border-radius: 0;
+
+	& .toc-block__title {
+		font-family: inherit;
+		font-size: 0.8125rem;
+		font-weight: var(--wp--custom--font-weight--bold);
+		letter-spacing: 0.1em;
+		line-height: 1.4;
+		margin: 0 0 var(--wp--preset--spacing--8);
+		text-transform: uppercase;
+	}
+
+	& .toc-block__link {
+		color: var(--toc-style-text);
+		font-size: 0.875rem;
+		line-height: 1.35;
+
+		&:hover {
+			color: var(--toc-style-accent-ink);
+			text-decoration: none;
+		}
+	}
+
+	& .toc-block__item.is-active > .toc-block__link,
+	& .toc-block__item.has-active-child > .toc-block__link {
+		color: var(--toc-active-color, var(--toc-style-accent-ink));
+		font-weight: var(--wp--custom--font-weight--bold);
+	}
+}
+
+/* Numbered: a white panel with an accent top, numbers and dividers. */
+.wp-block-pmp-toc-block.is-style-numbered {
+	background-color: var(--wp--custom--resources--surface, #fff);
+	border-top: 4px solid var(--toc-style-accent);
+	box-shadow: var(--wp--custom--resources--shadow, 0 2px 14px rgb(24 34 48 / 6%), 0 1px 2px rgb(24 34 48 / 5%));
+	padding: 14px 20px 10px;
+
+	& .toc-block__title {
+		color: var(--toc-style-accent-ink);
+	}
+
+	& .toc-block__list {
+		counter-reset: toc-numbered;
+	}
+
+	& .toc-block__item {
+		counter-increment: toc-numbered;
+
+		& + .toc-block__item {
+			border-top: 1px solid var(--toc-style-line);
+			margin-top: 0;
+		}
+	}
+
+	& .toc-block__link {
+		align-items: baseline;
+		display: flex;
+		gap: 12px;
+		padding: 9px 0;
+
+		&::before {
+			color: var(--toc-style-muted);
+			content: counters(toc-numbered, ".");
+			flex: none;
+			font-size: 0.75rem;
+			font-weight: var(--wp--custom--font-weight--regular, 400);
+			min-width: 1em;
+		}
+	}
+
+	& .toc-block__item.is-active > .toc-block__link::before {
+		color: var(--toc-style-text);
+		font-weight: var(--wp--custom--font-weight--bold);
+	}
+}
+
+/* Rail: a thin line on the left; the active item gets a thick accent bar. */
+.wp-block-pmp-toc-block.is-style-rail {
+	background-color: transparent;
+	padding: 0;
+
+	& .toc-block__title {
+		color: var(--toc-style-muted);
+	}
+
+	& .toc-block__list {
+		border-left: 2px solid color-mix(in sRGB, var(--wp--preset--color--gray-100, #b5bbc4) 70%, transparent);
+	}
+
+	& .toc-block__list .toc-block__list {
+		border-left: 0;
+		padding-inline-start: var(--wp--preset--spacing--12);
+	}
+
+	& .toc-block__link {
+		border-left: 4px solid transparent;
+		color: var(--toc-style-muted);
+		margin-left: -3px;
+		padding: 8px 0 8px 16px;
+	}
+
+	& .toc-block__item.is-active > .toc-block__link {
+		border-left-color: var(--toc-active-color, var(--toc-style-accent));
+	}
+}
+
+/* Highlight: plain rows; the active item sits on a tint of the accent. */
+.wp-block-pmp-toc-block.is-style-highlight {
+	background-color: transparent;
+	padding: 0;
+
+	& .toc-block__title {
+		color: var(--toc-style-muted);
+		padding-inline: 12px;
+	}
+
+	& .toc-block__item + .toc-block__item {
+		margin-top: 2px;
+	}
+
+	& .toc-block__link {
+		border-radius: 6px;
+		padding: 8px 12px;
+	}
+
+	& .toc-block__item.is-active > .toc-block__link {
+		background-color: var(--toc-active-bg, color-mix(in sRGB, var(--toc-style-accent) 12%, transparent));
+	}
+}

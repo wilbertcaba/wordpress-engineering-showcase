@@ -49,3 +49,9 @@ add_filter( 'block_type_metadata', static function ( $metadata ) {
 $meta_hooks = __DIR__ . '/includes/blocks/post-meta/hooks.php';
 if ( file_exists( $meta_hooks ) ) { require_once $meta_hooks; }
 require_once __DIR__ . '/includes/query-render.php';
+
+// Focused Table of Contents module; no private application autoloader required.
+require_once __DIR__ . '/includes/classes/Module.php';
+require_once __DIR__ . '/includes/classes/Block/TocBlock.php';
+(new \PMP\Theme\Block\TocBlock())->register();
+require_once __DIR__ . '/includes/toc-settings.php';

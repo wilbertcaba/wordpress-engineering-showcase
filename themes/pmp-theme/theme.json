@@ -348,6 +348,35 @@
       "fontWeight": "var(--wp--custom--font-weight--regular)",
       "fontSize": "var(--wp--preset--font-size--normal)",
       "lineHeight": "1.4"
+    },
+    "blocks": {
+      "pmp/toc-block": {
+        "border": {
+          "color": "var(--wp--preset--color--gray-100)",
+          "radius": "6px",
+          "style": "solid",
+          "width": "1px"
+        },
+        "color": {
+          "background": "var(--wp--preset--color--tertiary)",
+          "text": "var(--wp--preset--color--black)"
+        },
+        "elements": {
+          "link": {
+            "color": {
+              "text": "var(--wp--preset--color--secondary)"
+            }
+          }
+        },
+        "spacing": {
+          "padding": {
+            "bottom": "var(--wp--preset--spacing--16)",
+            "left": "var(--wp--preset--spacing--16)",
+            "right": "var(--wp--preset--spacing--16)",
+            "top": "var(--wp--preset--spacing--16)"
+          }
+        }
+      }
     }
   }
 }

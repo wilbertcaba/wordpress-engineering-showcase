@@ -1,0 +1,42 @@
+/**
+ * Editor-only rules for the Table of Contents block.
+ *
+ * Placement classes hide an instance on the front end depending on the
+ * viewport. Inside the editor every instance stays visible so it can be
+ * styled, and the active preview does not depend on the viewport width.
+ */
+
+.toc-block--desktop,
+.toc-block--mobile {
+	display: block;
+}
+
+/* Sticky is a front-end behaviour; in the canvas the block stays in normal flow. */
+.toc-block--sticky {
+	max-height: none;
+	overflow: visible;
+	position: static;
+	top: auto;
+}
+
+.toc-block__list--placeholder {
+	opacity: 0.6;
+	pointer-events: none;
+}
+
+.toc-block--scrollspy .toc-block__item.is-active {
+	background: var(--toc-active-bg, var(--toc-item-bg, transparent));
+	border-bottom: var(--toc-item-border-bottom-active, var(--toc-item-border-bottom, 0));
+	border-left: var(--toc-item-border-left-active, var(--toc-item-border-left, 0));
+	border-right: var(--toc-item-border-right-active, var(--toc-item-border-right, 0));
+	border-top: var(--toc-item-border-top-active, var(--toc-item-border-top, 0));
+}
+
+.toc-block--scrollspy .is-active > .toc-block__link {
+	color: var(--toc-active-color, var(--wp--preset--color--secondary));
+	font-weight: var(--wp--custom--font-weight--bold);
+}
+
+.toc-block--scrollspy .has-active-child > .toc-block__link {
+	font-weight: var(--wp--custom--font-weight--bold);
+}

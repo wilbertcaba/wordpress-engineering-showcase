@@ -68,3 +68,22 @@ The after-only Video Modal was extracted with its editor controls, dynamic rende
 - Desktop/mobile dialog screenshots were inspected; existing after screenshots were refreshed for the new navigation link.
 
 Showcase adaptations include URL validation, Vimeo privacy-hash preservation and its current `ended` subscription, explicit native-video pause/unload, and restoration of the previous body overflow style. These are recorded in provenance separately from the original implementation. Private source checkouts and comparison tags were left unchanged. Docker execution and Local-app provisioning remain unverified as described above.
+
+## Table of Contents addition — November 20, 2026
+
+The Table of Contents is presented as a new in-house feature, with one document covering dbeqiri1396’s initial block/early enhancer and Wilbert Caba’s later rework and extensions. The current after-only demo includes a long block-content guide and a classic-HTML guide; no historical TOC implementation was added to the before environment.
+
+- All seventeen browser tests passed together, including four TOC tests and the thirteen existing feature tests.
+- TOC checks covered matching server links/IDs, repeated and accented headings, explicit anchors, scroll highlighting, sticky and nested-sticky behavior, desktop/mobile placement at 782/781px, keyboard expansion, classic links without JavaScript, editor save/reload, and administrator application/clearing of shared styles.
+- WordPress checks passed in both states. TOC assertions cover owned page counts, classic discovery, list nesting, title exclusion, output escaping, CSS-value validation, shared-default inheritance and explicit zero, denied anonymous/editor writes, administrator REST saves, and automatic insertion for both block and classic content.
+- The isolated TOC seed ran repeatedly without changing other owned feature records, home-page settings, the auto-insert option, or shared styles. It keeps one page per owned guide key.
+- The theme build, JavaScript lint, PHP syntax checks, twelve unit tests, and hashes for seventy-five extracted source files passed. Existing build/tooling limitations above still apply.
+- Desktop and mobile screenshots were visually inspected. Existing feature screenshots were refreshed for the new navigation link.
+
+Testing exposed duplicate automatic heading IDs on the pinned WordPress 6.8 editor when repeated headings mounted together. A showcase-only batched anchor generator replaces that eager core behavior and has a dedicated regression test. The showcase also rejects CSS declaration delimiters in color values and supplies the missing desktop media-query token. These adaptations, the focused settings extraction, and authorship are documented in provenance and the feature guide.
+
+The private theme checkout and existing comparison tags were left unchanged. Docker execution and Local-app provisioning remain outside verified coverage. These results describe the local PHP/SQLite runtime.
+
+### Hierarchical numbering follow-up
+
+The Numbered style now uses hierarchical counters (`1`, `1.1`, `1.1.1`, `2`, `2.1`) instead of restarting nested entries at a bare `1`. The shared style applies to the editor and frontend. The build, provenance checks, and responsive TOC browser check passed; desktop/mobile screenshots were refreshed and inspected, and a separate editor preview was visually checked without saving content.

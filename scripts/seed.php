@@ -64,3 +64,5 @@ WP_CLI::success( 'Seeded ' . ( $after ? 'after' : 'before' ) . ' demo: 8 practic
 if ( $after ) { require __DIR__ . '/seed-logo-slider.php'; }
 
 if ( $after ) { require __DIR__ . '/seed-video-modal.php'; }
+
+if ( $after ) { require __DIR__ . '/seed-toc.php'; }

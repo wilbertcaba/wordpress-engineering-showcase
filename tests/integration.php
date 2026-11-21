@@ -49,3 +49,7 @@ if ( $logo_registered ) { require __DIR__ . '/logo-slider-integration.php'; }
 $video_registered = WP_Block_Type_Registry::get_instance()->is_registered( 'pmp/video-modal' );
 showcase_assert( $video_registered === $after, 'Video Modal available only in the after theme' );
 if ( $video_registered ) { require __DIR__ . '/video-modal-integration.php'; }
+
+$toc_registered = WP_Block_Type_Registry::get_instance()->is_registered( 'pmp/toc-block' );
+showcase_assert( $toc_registered === $after, 'Table of Contents available only in the after theme' );
+if ( $toc_registered ) { require __DIR__ . '/toc-integration.php'; }

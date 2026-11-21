@@ -89,6 +89,13 @@ else if (action === 'seed-video-modal')
 		'eval-file',
 		'/var/www/html/wp-content/showcase/scripts/seed-video-modal.php',
 	]);
+else if (action === 'seed-toc')
+	env('after', 'run', [
+		'cli',
+		'wp',
+		'eval-file',
+		'/var/www/html/wp-content/showcase/scripts/seed-toc.php',
+	]);
 else if (action === 'setup') {
 	prepare();
 	start();
@@ -117,5 +124,5 @@ else if (action === 'setup') {
 		]);
 } else
 	throw new Error(
-		'Use prepare, start, seed, seed-logo-slider, seed-video-modal, setup, stop, or check.',
+		'Use prepare, start, seed, seed-logo-slider, seed-video-modal, seed-toc, setup, stop, or check.',
 	);

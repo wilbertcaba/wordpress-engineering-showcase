@@ -197,9 +197,9 @@
       "source": "assets/css/frontend/global/media-queries.css",
       "destination": "themes/pmp-theme/assets/css/frontend/global/media-queries.css",
       "sourceSha256": "6f1b82c122fbb59bee8d1c66e983a30d8fb9e9386ca7861effccbb0c583878ac",
-      "adapted": false,
+      "adapted": true,
       "repository": "theme",
-      "extractedSha256": "6f1b82c122fbb59bee8d1c66e983a30d8fb9e9386ca7861effccbb0c583878ac"
+      "extractedSha256": "741bba582213ba09ed1d1dfa29530eaff6b6af136bb17aaf4c9d12a2395abbb2"
     },
     {
       "source": "patterns/practice-areas-grid-variation-1.php",
@@ -255,7 +255,7 @@
       "sourceSha256": "0f8581ea973c643af7d1af0ffe64a26586cede3f02f18becc39f909bbd299f7f",
       "adapted": true,
       "repository": "theme",
-      "extractedSha256": "3720ea3558f093aeeb51d0d33b82c5076264f9040a943f62983ce6143d24c101"
+      "extractedSha256": "aef1ecf3e3718e6eb999fc7ef2b43d5391cb54d12765f207ae9fa41c8f436472"
     },
     {
       "source": "includes/classes/Module.php",
@@ -528,6 +528,157 @@
       "sourceSha256": "6941c98914b097132f9030a912f8965210d6b27873e52f119e02d0e8655dbe4c",
       "extractedSha256": "6b4aa16482d05e3568944596d29a020de7e9ac8672c24c8154307cd41d5866a8",
       "adapted": true
+    },
+    {
+      "source": "includes/blocks/toc-block/block.json",
+      "destination": "themes/pmp-theme/includes/blocks/toc-block/block.json",
+      "sourceSha256": "5066a20486f30f561c6a1ca36aeffd74369a6f40d65654fc55b641f1549f9d42",
+      "extractedSha256": "5066a20486f30f561c6a1ca36aeffd74369a6f40d65654fc55b641f1549f9d42",
+      "adapted": false,
+      "repository": "theme",
+      "sourceRevision": "a9a54c97ec7be36a66e61ea6a63442670aaad25a",
+      "feature": "table-of-contents"
+    },
+    {
+      "source": "includes/blocks/toc-block/edit.js",
+      "destination": "themes/pmp-theme/includes/blocks/toc-block/edit.js",
+      "sourceSha256": "d1ff514b1e7e5a2090fc8cb384467eefb40951a0ffd1c6271bbe48f20b0c27fd",
+      "extractedSha256": "e2e7274a5b0e665eb48b1b4ee0608b5a34192f24ef86b85bb2189c55e614d75c",
+      "adapted": true,
+      "repository": "theme",
+      "sourceRevision": "a9a54c97ec7be36a66e61ea6a63442670aaad25a",
+      "feature": "table-of-contents"
+    },
+    {
+      "source": "includes/blocks/toc-block/editor.css",
+      "destination": "themes/pmp-theme/includes/blocks/toc-block/editor.css",
+      "sourceSha256": "b7d4fa08d9d9855e26a0502838c435eeca38665f8f81d7fa41732b5e1d2b1b9c",
+      "extractedSha256": "b7d4fa08d9d9855e26a0502838c435eeca38665f8f81d7fa41732b5e1d2b1b9c",
+      "adapted": false,
+      "repository": "theme",
+      "sourceRevision": "a9a54c97ec7be36a66e61ea6a63442670aaad25a",
+      "feature": "table-of-contents"
+    },
+    {
+      "source": "includes/blocks/toc-block/index.js",
+      "destination": "themes/pmp-theme/includes/blocks/toc-block/index.js",
+      "sourceSha256": "4bf1feab3bfc1bee33d3452c4a6417aa9663fa4ffc5372c3d975000d8f7f72b7",
+      "extractedSha256": "4bf1feab3bfc1bee33d3452c4a6417aa9663fa4ffc5372c3d975000d8f7f72b7",
+      "adapted": false,
+      "repository": "theme",
+      "sourceRevision": "a9a54c97ec7be36a66e61ea6a63442670aaad25a",
+      "feature": "table-of-contents"
+    },
+    {
+      "source": "includes/blocks/toc-block/item-radius-control.js",
+      "destination": "themes/pmp-theme/includes/blocks/toc-block/item-radius-control.js",
+      "sourceSha256": "fb0f5c9ef0a3cfa0117d4122d719185f876f34b7853cbe6d7688a8f9a362499e",
+      "extractedSha256": "fb0f5c9ef0a3cfa0117d4122d719185f876f34b7853cbe6d7688a8f9a362499e",
+      "adapted": false,
+      "repository": "theme",
+      "sourceRevision": "a9a54c97ec7be36a66e61ea6a63442670aaad25a",
+      "feature": "table-of-contents"
+    },
+    {
+      "source": "includes/blocks/toc-block/markup.php",
+      "destination": "themes/pmp-theme/includes/blocks/toc-block/markup.php",
+      "sourceSha256": "6cb4d1191401420a0fb0b7f6b21f3c25d9aaa3a733589351c7078fc2cb65b9c6",
+      "extractedSha256": "6cb4d1191401420a0fb0b7f6b21f3c25d9aaa3a733589351c7078fc2cb65b9c6",
+      "adapted": false,
+      "repository": "theme",
+      "sourceRevision": "a9a54c97ec7be36a66e61ea6a63442670aaad25a",
+      "feature": "table-of-contents"
+    },
+    {
+      "source": "includes/blocks/toc-block/save.js",
+      "destination": "themes/pmp-theme/includes/blocks/toc-block/save.js",
+      "sourceSha256": "0c0f95d0cfcd6aee8c7b401b01894f484623062487b0eea8ec2e8754dfe0e672",
+      "extractedSha256": "0c0f95d0cfcd6aee8c7b401b01894f484623062487b0eea8ec2e8754dfe0e672",
+      "adapted": false,
+      "repository": "theme",
+      "sourceRevision": "a9a54c97ec7be36a66e61ea6a63442670aaad25a",
+      "feature": "table-of-contents"
+    },
+    {
+      "source": "includes/blocks/toc-block/site-defaults.js",
+      "destination": "themes/pmp-theme/includes/blocks/toc-block/site-defaults.js",
+      "sourceSha256": "a499834e1b87053c67d8fceaf53c85b540bd99355d860249b26fc42fe8e8962c",
+      "extractedSha256": "a499834e1b87053c67d8fceaf53c85b540bd99355d860249b26fc42fe8e8962c",
+      "adapted": false,
+      "repository": "theme",
+      "sourceRevision": "a9a54c97ec7be36a66e61ea6a63442670aaad25a",
+      "feature": "table-of-contents"
+    },
+    {
+      "source": "includes/blocks/toc-block/slug.js",
+      "destination": "themes/pmp-theme/includes/blocks/toc-block/slug.js",
+      "sourceSha256": "9f3a1af008f743733c399ef022a08e4d0d2b370fbfdcab68a87b67a2e2a38654",
+      "extractedSha256": "9f3a1af008f743733c399ef022a08e4d0d2b370fbfdcab68a87b67a2e2a38654",
+      "adapted": false,
+      "repository": "theme",
+      "sourceRevision": "a9a54c97ec7be36a66e61ea6a63442670aaad25a",
+      "feature": "table-of-contents"
+    },
+    {
+      "source": "includes/blocks/toc-block/style.css",
+      "destination": "themes/pmp-theme/includes/blocks/toc-block/style.css",
+      "sourceSha256": "c4fe3035c1d5c381fe75e82648bb1ebd7216b90f33ca643d144672d3c2165b53",
+      "extractedSha256": "b70f1d7a4d71630606e7ddd9eabd807459b259578448ce361f6975da01c612c5",
+      "adapted": true,
+      "repository": "theme",
+      "sourceRevision": "a9a54c97ec7be36a66e61ea6a63442670aaad25a",
+      "feature": "table-of-contents"
+    },
+    {
+      "source": "includes/blocks/toc-block/utils.js",
+      "destination": "themes/pmp-theme/includes/blocks/toc-block/utils.js",
+      "sourceSha256": "4e13658a944f5ca1e0af0eedd39f49089acbcb45a064988ef26432ab4157630a",
+      "extractedSha256": "4e13658a944f5ca1e0af0eedd39f49089acbcb45a064988ef26432ab4157630a",
+      "adapted": false,
+      "repository": "theme",
+      "sourceRevision": "a9a54c97ec7be36a66e61ea6a63442670aaad25a",
+      "feature": "table-of-contents"
+    },
+    {
+      "source": "includes/blocks/toc-block/view.js",
+      "destination": "themes/pmp-theme/includes/blocks/toc-block/view.js",
+      "sourceSha256": "cad5d9dd80227ef9a380edbe94752c256b18ca82cc1c0cfa94bc3a1bbb176e8d",
+      "extractedSha256": "cad5d9dd80227ef9a380edbe94752c256b18ca82cc1c0cfa94bc3a1bbb176e8d",
+      "adapted": false,
+      "repository": "theme",
+      "sourceRevision": "a9a54c97ec7be36a66e61ea6a63442670aaad25a",
+      "feature": "table-of-contents"
+    },
+    {
+      "source": "includes/classes/Block/TocBlock.php",
+      "destination": "themes/pmp-theme/includes/classes/Block/TocBlock.php",
+      "sourceSha256": "c5a19ee247907a66c81f7f5949efe24c88bfa8098c6a61f471e063990d7b7973",
+      "extractedSha256": "14b32efa15af978a96446b6c7b76f382387388582d709f5477ba87765076359a",
+      "adapted": true,
+      "repository": "theme",
+      "sourceRevision": "a9a54c97ec7be36a66e61ea6a63442670aaad25a",
+      "feature": "table-of-contents"
+    },
+    {
+      "source": "includes/classes/Module.php",
+      "destination": "themes/pmp-theme/includes/classes/Module.php",
+      "sourceSha256": "9c63f49753e74a5df23ec86fdef959827ecc56bc2bd147fb71fb186cc377bfbf",
+      "extractedSha256": "9c63f49753e74a5df23ec86fdef959827ecc56bc2bd147fb71fb186cc377bfbf",
+      "adapted": false,
+      "repository": "theme",
+      "sourceRevision": "a9a54c97ec7be36a66e61ea6a63442670aaad25a",
+      "feature": "table-of-contents"
+    },
+    {
+      "source": "includes/classes/Admin/Settings.php",
+      "destination": "themes/pmp-theme/includes/toc-settings.php",
+      "sourceSha256": "ba823ca1582b443b5489ba80a6a70ce1acf7804a35e2d16c681cf32e2a4e49a2",
+      "extractedSha256": "5d783ddf6760056d04b7e052282a7f0496a9ac866d9402105ced1c7c92130ce2",
+      "adapted": true,
+      "repository": "theme",
+      "sourceRevision": "a9a54c97ec7be36a66e61ea6a63442670aaad25a",
+      "feature": "table-of-contents",
+      "extraction": "Only register_toc_settings() retained, wrapped in an admin_init callback."
     }
   ],
   "notes": [
@@ -598,6 +749,45 @@
         "Local media, the demo page, seeding, navigation and verification are showcase additions.",
         "Subscribe to Vimeo\u2019s current ended event while retaining the historical finish message as a compatibility fallback.",
         "Explicitly pause and unload native video before detaching it on dialog close."
+      ]
+    },
+    "table-of-contents": {
+      "type": "new",
+      "environment": "after",
+      "repository": "https://github.com/pmp-marketing-group/pmp-theme",
+      "sourceRevision": "a9a54c97ec7be36a66e61ea6a63442670aaad25a",
+      "sourceCommits": [
+        "8606b6010041fd824e8d8df945e39d85dd0f73fb",
+        "14ed1c6d51c0f128eb80214a242e18dacc476626",
+        "ac2619f3928be8918275eb296c97bffe650891d2",
+        "00533a7403f0f2f2cdf1fadd13b3d3b0213b1fa5",
+        "d9b2aca953eda547df9309be26bb2cf47fbfcab3",
+        "004324f1ce48dc1f8d0a43eb683ee13cc44a6997",
+        "1ae4f47d1486ea114c46fa2f2bee0e7ecc9c5e9e",
+        "dc669e714da3b87a1385d7e7a525ffa18f584663",
+        "07d8286e211ee353be93f3280808d258e1fea287",
+        "a9a54c97ec7be36a66e61ea6a63442670aaad25a"
+      ],
+      "documentation": "docs/table-of-contents/README.md",
+      "authorship": [
+        {
+          "author": "dbeqiri1396",
+          "contribution": "Initial in-house block and early back-to-top enhancement."
+        },
+        {
+          "author": "Wilbert Caba",
+          "contribution": "Rework, styles, placement, scrollspy, shared defaults, classic content, collapsible mode and sticky corrections."
+        }
+      ],
+      "adaptations": [
+        "Focused bootstrap loads the original Module base and TocBlock hooks explicitly; only the TOC General Settings field is retained from the broader admin module.",
+        "Demo pages, fixture styles, navigation and tests are showcase additions.",
+        "Copy only the TOC block defaults and referenced missing tokens from theme.json.",
+        "Reject semicolons and declaration delimiters in color values before CSS serialization.",
+        "Disable core generateAnchors on the pinned WordPress 6.8 runtime and persist missing anchors in one batched editor pass, avoiding duplicate IDs when repeated headings mount together. Explicit anchors remain unchanged.",
+        "Add the missing 782px custom media query and use a nonoverlapping mobile maximum.",
+        "Whitespace formatting correction for the current lint configuration.",
+        "Use hierarchical CSS counters for the Numbered style so nested headings display 1.1 and 1.1.1 in the frontend and editor."
       ]
     }
   }
