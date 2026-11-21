@@ -92,7 +92,7 @@ The original block names, attributes, option names, and hooks are retained. The 
 
 Compatibility/correctness changes made for this showcase are separate from the historical contribution:
 
-- A batched editor anchor pass replaces core’s eager automatic generation on the pinned WordPress 6.8 runtime. Testing showed that repeated headings mounted together could otherwise receive duplicate IDs. Missing heading anchors are assigned in one pass; explicit anchors are preserved.
+- A batched editor anchor pass replaces core’s eager automatic generation. Testing on the earlier WordPress 6.8 runtime showed that repeated headings mounted together could otherwise receive duplicate IDs; the fix is retained and verified on WordPress 7.0.9. Missing heading anchors are assigned in one pass; explicit anchors are preserved.
 - The Numbered style uses hierarchical counters for nested entries in both the editor and frontend. Numbering follows the outline depth, including skipped heading levels.
 - Color serialization rejects declaration delimiters so one color cannot introduce additional CSS declarations.
 - The extracted media-query tokens define desktop at 782px and use a nonoverlapping mobile maximum. One source indentation issue was corrected for lint.

@@ -58,8 +58,11 @@ function env(state, cmd, args = []) {
 	const config = path.join(root, `.wp-env.${state}.json`);
 	run(path.join(root, 'node_modules/.bin/wp-env'), [cmd, '--config', config, ...args]);
 }
-function start() {
-	for (const state of ['before', 'after']) env(state, 'start', ['--runtime', runtime]);
+function start(update = false) {
+	for (const state of ['before', 'after']) {
+		env(state, 'start', ['--runtime', runtime, ...(update ? ['--update'] : [])]);
+		if (update) env(state, 'run', ['cli', 'wp', 'core', 'update-db']);
+	}
 }
 function seed() {
 	for (const state of ['before', 'after']) {
@@ -74,6 +77,7 @@ function seed() {
 }
 if (action === 'prepare') prepare();
 else if (action === 'start') start();
+else if (action === 'update') start(true);
 else if (action === 'seed') seed();
 else if (action === 'seed-logo-slider')
 	env('after', 'run', [
@@ -95,6 +99,13 @@ else if (action === 'seed-toc')
 		'wp',
 		'eval-file',
 		'/var/www/html/wp-content/showcase/scripts/seed-toc.php',
+	]);
+else if (action === 'seed-breadcrumbs')
+	env('after', 'run', [
+		'cli',
+		'wp',
+		'eval-file',
+		'/var/www/html/wp-content/showcase/scripts/seed-breadcrumbs.php',
 	]);
 else if (action === 'setup') {
 	prepare();
@@ -124,5 +135,5 @@ else if (action === 'setup') {
 		]);
 } else
 	throw new Error(
-		'Use prepare, start, seed, seed-logo-slider, seed-video-modal, seed-toc, setup, stop, or check.',
+		'Use prepare, start, update, seed, seed-logo-slider, seed-video-modal, seed-toc, seed-breadcrumbs, setup, stop, or check.',
 	);

@@ -7,3 +7,5 @@ The private plugin metadata contains conflicting license declarations (Composer:
 The bundled geometric demonstration images were created for this showcase using code, without client assets.
 
 The Table of Contents feature originated in-house: dbeqiri1396 created the initial block and early back-to-top enhancement; Wilbert Caba later reworked and extended it. It is not attributed to a 10up Table of Contents implementation. See docs/table-of-contents/README.md for the evolution and provenance.
+
+Breadcrumbs extends WordPress core’s `core/breadcrumbs` block. WordPress contributors provide the core block/editor; Wilbert Caba authored the PMP resolver, settings, theme presentation and SEO adapters. The showcase does not bundle an SEO plugin or claim authorship of WordPress core.

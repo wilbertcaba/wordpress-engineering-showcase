@@ -66,3 +66,5 @@ if ( $after ) { require __DIR__ . '/seed-logo-slider.php'; }
 if ( $after ) { require __DIR__ . '/seed-video-modal.php'; }
 
 if ( $after ) { require __DIR__ . '/seed-toc.php'; }
+
+if ( $after ) { require __DIR__ . '/seed-breadcrumbs.php'; }

@@ -1,5 +1,5 @@
 {
-  "core": "https://wordpress.org/wordpress-6.8.3.zip",
+  "core": "https://wordpress.org/wordpress-7.0.9.zip",
   "phpVersion": "8.2",
   "port": 8890,
   "testsPort": 8891,

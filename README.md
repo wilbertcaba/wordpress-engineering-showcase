@@ -12,6 +12,7 @@ This repository includes only the theme and plugin code needed for the demos, wi
 | Logo Slider | New feature | After only | [Feature README](docs/logo-slider/README.md) |
 | Video Modal | New feature | After only | [Feature README](docs/video-modal/README.md) |
 | Table of Contents | New feature | After only | [Feature README](docs/table-of-contents/README.md) |
+| Breadcrumbs | Extension of WordPress core | PMP integration in after only | [Feature README](docs/breadcrumbs/README.md) |
 
 Extensions may include a comparison with their original behavior. New features are available in the after environment only. Each feature’s documentation explains what is available and how to review it.
 
@@ -27,7 +28,7 @@ Run `npm run demo:start` for Docker, or `SHOWCASE_RUNTIME=php npm run demo:start
 
 Choose Docker or PHP and keep using that option for all demo commands. For PHP, put `SHOWCASE_RUNTIME=php` before each command—the terminal won’t remember your choice between commands.
 
-Both options use Node 24.20.0 and npm 11. If you choose:
+Both environments use WordPress 7.0.9. Both runtime options use Node 24.20.0 and npm 11. If you choose:
 
 - A) **Docker:** Docker Desktop must be installed and running. WordPress and PHP run inside containers.
 - B) **PHP/SQLite:** Install PHP if it is not already available, and ensure PHP and WP-CLI are on your PATH. PHP 8.2 matches the demo configuration. Docker and the Local app are not required.
@@ -52,7 +53,13 @@ SHOWCASE_RUNTIME=php npm run demo:setup
 
 `demo:setup` installs the theme dependencies, builds both versions, starts both WordPress sites, and seeds the fictional content. Running it again restores the seeded demo records and home page, overwriting edits to those records. Use `demo:start` for everyday use instead.
 
-Open [before](http://localhost:8888) and [after](http://localhost:8890). The Grid is the home page; [Logo Slider](http://localhost:8890/logo-slider/), [Video Modal](http://localhost:8890/video-modal/), and [Table of Contents](http://localhost:8890/table-of-contents/) are available in the after environment only. Local-only wp-env login: `admin` / `password`. Keep these environments local.
+Open [before](http://localhost:8888) and [after](http://localhost:8890). The Grid is the home page; [Logo Slider](http://localhost:8890/logo-slider/), [Video Modal](http://localhost:8890/video-modal/), and [Table of Contents](http://localhost:8890/table-of-contents/) are available in the after environment only. The [Breadcrumbs guide](docs/breadcrumbs/README.md) adds a nested-page and practice-area trail example. Local-only wp-env login: `admin` / `password`. Keep these environments local.
+
+### Updating an existing installation
+
+When pulling this WordPress upgrade into an existing checkout, run `SHOWCASE_RUNTIME=php npm run demo:update` for PHP, or `npm run demo:update` for Docker. This updates WordPress in both sites and runs their database upgrades without reseeding content. The before theme/plugin source remains the historical extraction in `.showcase/before/`.
+
+For the new Breadcrumbs example, follow its [build and feature-only seed instructions](docs/breadcrumbs/README.md#add-this-feature-to-an-existing-installation).
 
 ### Daily use
 

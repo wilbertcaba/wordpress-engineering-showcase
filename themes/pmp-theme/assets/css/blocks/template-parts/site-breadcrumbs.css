@@ -1,0 +1,18 @@
+/*
+ * Breadcrumbs template part (parts/breadcrumbs.html)
+ *
+ * The part sits between the site header and <main> as a direct child of
+ * .wp-site-blocks, so a background on its group runs edge to edge with no
+ * alignfull tricks. Core's root blockGap gives every root child a 24px top
+ * margin. Two rules remove it around the band: on the part itself when it
+ * directly follows the header, and on whatever directly follows the part.
+ * With both, a band background touches the header above and the content
+ * below. Only those exact pairings are matched, so any other root child
+ * keeps its rhythm, and on pages where the block renders nothing the part
+ * is removed entirely and <main> keeps its 24px below the header.
+ */
+
+:where(.wp-site-blocks) > .site-header + .site-breadcrumbs,
+:where(.wp-site-blocks) > .site-breadcrumbs + * {
+	margin-block-start: 0;
+}

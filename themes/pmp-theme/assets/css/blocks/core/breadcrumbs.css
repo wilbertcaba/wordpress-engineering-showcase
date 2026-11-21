@@ -1,0 +1,152 @@
+/*
+ * Breadcrumbs (core/breadcrumbs)
+ *
+ * Core's own stylesheet resets both lists, lays them out with flexbox and
+ * draws the separator from the --separator custom property. This file adds
+ * theme colours, the current-page weight, and the small-screen layout that
+ * PMP\Theme\Block\BreadcrumbsBlock::render_block() produces: a house icon for
+ * Home, the intermediate levels collapsed behind a disclosure toggle, and a
+ * single-line trail that scrolls sideways when the current title is too long.
+ *
+ * Every level stays in the DOM. Below --bp-medium the intermediate ones are
+ * hidden until the toggle reveals them, so the BreadcrumbList schema still
+ * matches the page. From --bp-medium up the nested list renders inline and
+ * the trail reads exactly as core renders it.
+ */
+
+.wp-block-breadcrumbs {
+	color: var(--wp--preset--color--gray-200, inherit);
+
+	/* Containing block for the small-screen dropdown. */
+	position: relative;
+
+	& .wp-block-breadcrumbs__list {
+		flex-wrap: nowrap;
+		-webkit-overflow-scrolling: touch;
+		overflow-x: auto;
+		scrollbar-width: none;
+
+		&::-webkit-scrollbar {
+			display: none;
+		}
+
+		&.is-dragging {
+			cursor: grabbing;
+			user-select: none;
+		}
+	}
+
+	& li {
+		white-space: nowrap;
+	}
+
+	& a {
+		color: inherit;
+		text-decoration: none;
+		transition: color 0.3s ease;
+
+		&:hover,
+		&:focus {
+			color: var(--wp--preset--color--primary);
+			text-decoration: underline;
+		}
+	}
+
+	& [aria-current="page"] {
+		color: var(--wp--preset--color--text, inherit);
+		font-weight: var(--wp--custom--font-weight--bold, 700);
+	}
+
+	& .wp-block-breadcrumbs__icon {
+		display: block;
+		fill: currentColor;
+		height: 1.25em;
+		width: 1.25em;
+	}
+
+	& .wp-block-breadcrumbs__home {
+		align-items: center;
+		display: inline-flex;
+		gap: var(--wp--preset--spacing--8);
+	}
+
+	& .wp-block-breadcrumbs__toggle {
+		align-items: center;
+		color: inherit;
+		cursor: pointer;
+		display: inline-flex;
+		justify-content: center;
+		line-height: 1;
+		min-height: 2rem;
+		min-width: 2rem;
+		transition: color 0.3s ease;
+
+		&:hover,
+		&:focus-visible,
+		&[aria-expanded="true"] {
+			color: var(--wp--preset--color--primary);
+		}
+	}
+
+	@media (--bp-medium-max) {
+
+		/* Icon only for Home. The label stays for assistive tech. */
+		& .wp-block-breadcrumbs__home-label {
+			clip: rect(1px, 1px, 1px, 1px);
+			clip-path: inset(50%);
+			height: 1px;
+			overflow: hidden;
+			position: absolute;
+			width: 1px;
+		}
+
+		& .wp-block-breadcrumbs__levels {
+			display: none;
+		}
+
+		/* Open state: the intermediate levels drop down under the trail. */
+		&.is-open .wp-block-breadcrumbs__levels {
+			align-items: flex-start;
+			background-color: var(--wp--preset--color--white);
+			border: 1px solid var(--wp--preset--color--tertiary);
+			border-radius: 4px;
+			box-shadow: 0 8px 24px rgb(0 0 0 / 12%);
+			display: flex;
+			flex-direction: column;
+			gap: var(--wp--preset--spacing--8);
+			left: 0;
+			max-width: 100%;
+			min-width: 12rem;
+			padding: var(--wp--preset--spacing--16);
+			position: absolute;
+			text-align: left;
+			top: 100%;
+			z-index: 30;
+
+			& li {
+				white-space: normal;
+
+				&::after {
+					content: none;
+				}
+			}
+		}
+	}
+
+	@media (--bp-medium) {
+
+		& .wp-block-breadcrumbs__list {
+			flex-wrap: wrap;
+			overflow-x: visible;
+		}
+
+		& li {
+			white-space: normal;
+		}
+
+		& .wp-block-breadcrumbs__home .wp-block-breadcrumbs__icon,
+		& .wp-block-breadcrumbs__toggle {
+			display: none;
+		}
+	}
+}

@@ -23,7 +23,8 @@
     "useBlockAssets": true,
     "entry": {
       "frontend": "./assets/js/frontend.js",
-      "editor": "./assets/js/editor.js"
+      "editor": "./assets/js/editor.js",
+      "breadcrumbs": "./assets/js/breadcrumbs.js"
     }
   },
   "allowScripts": {

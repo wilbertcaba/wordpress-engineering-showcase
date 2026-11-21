@@ -1,5 +1,7 @@
 # Verification record
 
+Current shared WordPress runtime: **7.0.9**. Earlier sections retain their original verification versions; see the upgrade and Breadcrumbs record below.
+
 Verified locally on November 20, 2026 with WordPress 6.8.3, Local's PHP 8.2.29 binary, the wp-env PHP/SQLite runtime, Node 24.20.0, npm 11.19.0, and Playwright Chromium.
 
 | Check | Result |
@@ -87,3 +89,23 @@ The private theme checkout and existing comparison tags were left unchanged. Doc
 ### Hierarchical numbering follow-up
 
 The Numbered style now uses hierarchical counters (`1`, `1.1`, `1.1.1`, `2`, `2.1`) instead of restarting nested entries at a bare `1`. The shared style applies to the editor and frontend. The build, provenance checks, and responsive TOC browser check passed; desktop/mobile screenshots were refreshed and inspected, and a separate editor preview was visually checked without saving content.
+
+
+## Shared WordPress upgrade and Breadcrumbs — November 20, 2026
+
+Both environments were upgraded from WordPress 6.8.3 to **7.0.9** before Breadcrumbs was extracted. PHP 8.2.29, SQLite, Node 24.20.0 and the historical before theme/plugin source were retained. SQLite online backups were saved in ignored `.showcase/backups/pre-wordpress-7.0.9/` before the upgrade.
+
+- Both installed WordPress versions were confirmed as 7.0.9, and database upgrades completed. Main-checkout wp-env configuration pins that same release for future installs.
+- SHA-256 checks of the before theme/plugin source remained unchanged. Before showcase-owned page, practice-area and attachment IDs, titles, content and parent values matched the pre-upgrade database backup after final verification.
+- Before adding Breadcrumbs, both environments passed integration checks and all seventeen existing browser tests, including the historical Grid editor/frontend.
+- After extraction, all **twenty-one browser tests** passed together. Four Breadcrumbs tests cover desktop/mobile trails, local links, configured practice-area parents, keyboard disclosure/dismissal, front-page suppression, anonymous settings-write rejection, settings persistence, enable/disable behavior, and saved/reloaded core block controls.
+- Final WordPress integration checks passed in both states, including version checks, core-block availability, after-only PMP integration, fixture counts, resolver/rendered-link agreement, core visibility controls, unpublished ancestors, no empty disabled band, settings sanitization, and shortcode stripping without execution.
+- Yoast and SmartCrawl adapters passed checks against representative provider arrays. No SEO plugin was installed; live provider/schema output, translation, Shadow Terms and topic-hub integrations were not validated.
+- Feature-only seeding ran twice without changing other feature records or home-page settings. It creates four owned pages and intentionally restores the documented breadcrumb demo settings.
+- The build, JavaScript lint, PHP syntax checks, twelve unit tests, and hashes for **eighty-five** extracted source files passed. Desktop/mobile Breadcrumbs screenshots were inspected; existing screenshots were refreshed for the navigation and breadcrumb band.
+
+A Logo Slider integration assertion was corrected to honor an omitted default-false attribute after editor serialization. The TOC browser check now places a heading above its reading line before asserting the active section, avoiding an assumption about the initial page height once the breadcrumb band is present. Neither required changing the historical before implementation.
+
+Source adaptations are recorded in provenance: focused bootstrap and helper extraction, guarding the optional Practice Area Types class, a dedicated frontend entry, the button reset utility, checkbox-label association, and known-scalar settings sanitization. Private theme/plugin checkouts and historical comparison tags were unchanged. The pre-existing local TOC guide edit was preserved.
+
+The verified runtime is PHP/SQLite. Docker execution and Local-app provisioning remain unverified; their configuration/instructions have been updated to the same WordPress release. The existing build warnings and tooling limits documented above remain.

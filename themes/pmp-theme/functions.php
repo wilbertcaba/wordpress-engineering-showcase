@@ -55,3 +55,13 @@ require_once __DIR__ . '/includes/classes/Module.php';
 require_once __DIR__ . '/includes/classes/Block/TocBlock.php';
 (new \PMP\Theme\Block\TocBlock())->register();
 require_once __DIR__ . '/includes/toc-settings.php';
+
+require_once __DIR__ . '/includes/breadcrumb-helpers.php';
+require_once __DIR__ . '/includes/classes/Block/BreadcrumbsBlock.php';
+require_once __DIR__ . '/includes/classes/Integration/SeoBreadcrumbs.php';
+foreach ( [new \PMP\Theme\Block\BreadcrumbsBlock(), new \PMP\Theme\Integration\SeoBreadcrumbs()] as $module ) {
+    if ( $module->can_register() ) { $module->register(); }
+}
+add_action( 'wp_enqueue_scripts', static function () {
+    if ( \PMP\Plugin\Breadcrumbs\Resolver::is_enabled() ) { pmp_showcase_script( 'breadcrumbs' ); }
+} );

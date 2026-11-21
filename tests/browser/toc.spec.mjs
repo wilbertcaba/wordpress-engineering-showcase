@@ -29,7 +29,14 @@ test('toc: server anchors, scrollspy, sticky behavior and responsive screenshots
 	await expect(page.locator('#repeated-heading')).toHaveCount(1);
 	await expect(page.locator('#repeated-heading-1')).toHaveCount(1);
 	await expect(page.locator('#questions')).toHaveCount(1);
-	await expect(page.locator(`${sidebar} a[aria-current="location"]`)).toHaveCount(1);
+	// Place a real section above the reading line; the breadcrumb band changes its initial Y position.
+	await page
+		.locator('#plan-a-useful-guide')
+		.evaluate((el) => window.scrollTo(0, window.scrollY + el.getBoundingClientRect().top - 100));
+	await expect(page.locator(`${sidebar} a[href="#plan-a-useful-guide"]`)).toHaveAttribute(
+		'aria-current',
+		'location',
+	);
 	await page
 		.locator('#cafe-resources')
 		.evaluate((el) => window.scrollTo(0, window.scrollY + el.getBoundingClientRect().top - 100));

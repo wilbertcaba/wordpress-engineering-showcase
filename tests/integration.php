@@ -53,3 +53,9 @@ if ( $video_registered ) { require __DIR__ . '/video-modal-integration.php'; }
 $toc_registered = WP_Block_Type_Registry::get_instance()->is_registered( 'pmp/toc-block' );
 showcase_assert( $toc_registered === $after, 'Table of Contents available only in the after theme' );
 if ( $toc_registered ) { require __DIR__ . '/toc-integration.php'; }
+
+showcase_assert( '7.0.9' === get_bloginfo( 'version' ), 'Pinned WordPress 7.0.9 in both states' );
+$breadcrumb_adapter = class_exists( \PMP\Theme\Block\BreadcrumbsBlock::class );
+showcase_assert( $breadcrumb_adapter === $after, 'PMP Breadcrumbs extension available only in the after theme' );
+showcase_assert( WP_Block_Type_Registry::get_instance()->is_registered( 'core/breadcrumbs' ), 'WordPress core Breadcrumbs available in both runtimes' );
+if ( $breadcrumb_adapter ) { require __DIR__ . '/breadcrumbs-integration.php'; }

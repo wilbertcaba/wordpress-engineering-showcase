@@ -1,6 +1,6 @@
 # Two disposable Local sites
 
-Create two **new, single-site** WordPress sites in Local: `showcase-before` and `showcase-after`. Use PHP 8.2 and WordPress 6.8.3 for parity. Never point the scripts at an existing client site.
+Create two **new, single-site** WordPress sites in Local: `showcase-before` and `showcase-after`. Use PHP 8.2 and WordPress 7.0.9 for parity. Never point the scripts at an existing client site.
 
 Run `npm ci` and `npm run demo:prepare` from the showcase checkout first. This builds the after source and exports/builds the before tag.
 
@@ -34,4 +34,4 @@ For browser checks against Local domains:
 BEFORE_URL=http://showcase-before.local AFTER_URL=http://showcase-after.local npm run test:browser
 ```
 
-If Local uses a newer WordPress version, record that as an additional compatibility check rather than evidence for the pinned runtime.
+The integration checks require the pinned WordPress 7.0.9 version. Use that release in both sites; a newer Local default is not evidence for the pinned runtime.

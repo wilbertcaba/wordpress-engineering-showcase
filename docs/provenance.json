@@ -679,6 +679,106 @@
       "sourceRevision": "a9a54c97ec7be36a66e61ea6a63442670aaad25a",
       "feature": "table-of-contents",
       "extraction": "Only register_toc_settings() retained, wrapped in an admin_init callback."
+    },
+    {
+      "source": "includes/classes/Block/BreadcrumbsBlock.php",
+      "destination": "themes/pmp-theme/includes/classes/Block/BreadcrumbsBlock.php",
+      "sourceSha256": "c0a4bee800a5d47262f1601cbf2b61514c7923238eda014fe1539cf9bfc84208",
+      "extractedSha256": "c0a4bee800a5d47262f1601cbf2b61514c7923238eda014fe1539cf9bfc84208",
+      "adapted": false,
+      "repository": "theme",
+      "sourceRevision": "9010d91a5d1245eefc3f4fe7d3b58e9df58e0311",
+      "feature": "breadcrumbs"
+    },
+    {
+      "source": "includes/classes/Integration/SeoBreadcrumbs.php",
+      "destination": "themes/pmp-theme/includes/classes/Integration/SeoBreadcrumbs.php",
+      "sourceSha256": "ba2d29bb013dd5675adab61e269093b8faf86565152ec535e3bf60b20ae92210",
+      "extractedSha256": "ba2d29bb013dd5675adab61e269093b8faf86565152ec535e3bf60b20ae92210",
+      "adapted": false,
+      "repository": "theme",
+      "sourceRevision": "9010d91a5d1245eefc3f4fe7d3b58e9df58e0311",
+      "feature": "breadcrumbs"
+    },
+    {
+      "source": "assets/css/blocks/core/breadcrumbs.css",
+      "destination": "themes/pmp-theme/assets/css/blocks/core/breadcrumbs.css",
+      "sourceSha256": "874f9f7fc788c57bf42d679a688a8b181e3ac41327a6b2bc98ea163d3c0eddf8",
+      "extractedSha256": "ebb7b1e6d2d5de9c0ff72e641575a47ee90fdc2fb0c818c8cf71e84ee1952cea",
+      "adapted": true,
+      "repository": "theme",
+      "sourceRevision": "9010d91a5d1245eefc3f4fe7d3b58e9df58e0311",
+      "feature": "breadcrumbs"
+    },
+    {
+      "source": "assets/css/blocks/template-parts/site-breadcrumbs.css",
+      "destination": "themes/pmp-theme/assets/css/blocks/template-parts/site-breadcrumbs.css",
+      "sourceSha256": "07480b6e0a7573e53f488adb5a2fd392d41f2bbc23014dee2d5143d07b4d2c64",
+      "extractedSha256": "07480b6e0a7573e53f488adb5a2fd392d41f2bbc23014dee2d5143d07b4d2c64",
+      "adapted": false,
+      "repository": "theme",
+      "sourceRevision": "9010d91a5d1245eefc3f4fe7d3b58e9df58e0311",
+      "feature": "breadcrumbs"
+    },
+    {
+      "source": "assets/js/frontend/components/breadcrumbs.js",
+      "destination": "themes/pmp-theme/assets/js/frontend/components/breadcrumbs.js",
+      "sourceSha256": "46c852e4309623e6592abcca0076c13594618b83e990d28622036a3d7bb19a3d",
+      "extractedSha256": "46c852e4309623e6592abcca0076c13594618b83e990d28622036a3d7bb19a3d",
+      "adapted": false,
+      "repository": "theme",
+      "sourceRevision": "9010d91a5d1245eefc3f4fe7d3b58e9df58e0311",
+      "feature": "breadcrumbs"
+    },
+    {
+      "source": "parts/breadcrumbs.html",
+      "destination": "themes/pmp-theme/parts/breadcrumbs.html",
+      "sourceSha256": "801179f0e21c5f5be52977ded833420e6727f0b2995957f1ba2c972fe8a2e249",
+      "extractedSha256": "801179f0e21c5f5be52977ded833420e6727f0b2995957f1ba2c972fe8a2e249",
+      "adapted": false,
+      "repository": "theme",
+      "sourceRevision": "9010d91a5d1245eefc3f4fe7d3b58e9df58e0311",
+      "feature": "breadcrumbs"
+    },
+    {
+      "source": "includes/classes/Breadcrumbs/Resolver.php",
+      "destination": "mu-plugins/pmp-plugin/includes/classes/Breadcrumbs/Resolver.php",
+      "sourceSha256": "85c4c7e24c719e347855ce488f57c89e5e7c863f6d66b1b2c8f5cb8b9a79ea39",
+      "extractedSha256": "fbc816fca7f6b65c36b66782920c184184163792dc904688f74b841250cce788",
+      "adapted": true,
+      "repository": "plugin",
+      "sourceRevision": "01d58040e77dcbc82d98cbb657470a86c71f3fe0",
+      "feature": "breadcrumbs"
+    },
+    {
+      "source": "includes/classes/SettingsPage/BaseSettingsPage.php",
+      "destination": "mu-plugins/pmp-plugin/includes/classes/SettingsPage/BaseSettingsPage.php",
+      "sourceSha256": "23a63eeefb5acec374b4fc95146c853fef7841d748de0293d82b7f6656004e7f",
+      "extractedSha256": "1d49470a69c069858ef60ce52bf8c73de3f322586ef9fb228ed5833f0ddfad02",
+      "adapted": true,
+      "repository": "plugin",
+      "sourceRevision": "01d58040e77dcbc82d98cbb657470a86c71f3fe0",
+      "feature": "breadcrumbs"
+    },
+    {
+      "source": "includes/classes/SettingsPage/Breadcrumbs.php",
+      "destination": "mu-plugins/pmp-plugin/includes/classes/SettingsPage/Breadcrumbs.php",
+      "sourceSha256": "44dcb825d94506809cc10301567e2a3fad6be44345fdc98526488304cc33fe5d",
+      "extractedSha256": "44dcb825d94506809cc10301567e2a3fad6be44345fdc98526488304cc33fe5d",
+      "adapted": false,
+      "repository": "plugin",
+      "sourceRevision": "01d58040e77dcbc82d98cbb657470a86c71f3fe0",
+      "feature": "breadcrumbs"
+    },
+    {
+      "source": "includes/helpers.php",
+      "destination": "themes/pmp-theme/includes/breadcrumb-helpers.php",
+      "sourceSha256": "7a81e3f7383c48a71cc279f7403f0cc67218c2a67d5ec01bfa01e32332dc63d3",
+      "adapted": true,
+      "repository": "theme",
+      "sourceRevision": "9010d91a5d1245eefc3f4fe7d3b58e9df58e0311",
+      "feature": "breadcrumbs",
+      "extractedSha256": "f07638d388e68ad872092b8c2a55c520b3deae4caf3b6123214345e10106fd6d"
     }
   ],
   "notes": [
@@ -789,6 +889,73 @@
         "Whitespace formatting correction for the current lint configuration.",
         "Use hierarchical CSS counters for the Numbered style so nested headings display 1.1 and 1.1.1 in the frontend and editor."
       ]
+    },
+    "breadcrumbs": {
+      "type": "extension",
+      "extends": "WordPress core/breadcrumbs",
+      "environment": "after",
+      "documentation": "docs/breadcrumbs/README.md",
+      "repositories": {
+        "theme": "https://github.com/pmp-marketing-group/pmp-theme",
+        "plugin": "https://github.com/pmp-marketing-group/pmp-plugin"
+      },
+      "sourceRevisions": {
+        "theme": "9010d91a5d1245eefc3f4fe7d3b58e9df58e0311",
+        "plugin": "01d58040e77dcbc82d98cbb657470a86c71f3fe0"
+      },
+      "sourceCommits": {
+        "theme": [
+          "d85bc586e90988d8ce50c52c31061934ae01bb30",
+          "353b03b1f00dbbfcd479d712569e7ceece3e575e",
+          "a0c874757e713c4b86f8de1111c48a0429394fc5",
+          "7f71f00231f7fc89383143de38957b45cd26f6c3",
+          "7ee78f9d7dbc31f4e5df318a0aab2691108b7829",
+          "4db5e04b7e33512f62c686c660a206a6f04dd7e5",
+          "461a3e690c94d0fdb9b835aea230c6ee7460344b",
+          "b44efa716dfd92be065a5add4e715e0c06dc3fdc",
+          "9010d91a5d1245eefc3f4fe7d3b58e9df58e0311"
+        ],
+        "plugin": [
+          "be6cdaa06b1b85481df4833fe2df57c8f2a3c907",
+          "58f1e2bee67733ff3c6f5e4726ed3ce576f07d4b",
+          "02ff5a1036a1b3d9dcc0e6f19121f1ac8b8411e0",
+          "c379e655015af04d22072aa92df052072387ce96",
+          "b49785bb8ac6191eeb2a925bb2f8112440d3557c",
+          "6eafe257bbdd51f1379ab69e5abb8450b9b73918",
+          "1dd21cc6fa9d303c6e18bb8bdf5e1c27923547da",
+          "aefd323d79155e9714fc5faa537c941e1b84a531",
+          "f51b1cbece8136af7b2010663331dbfad07cdcbc",
+          "6af421f244c6916e6761a0a92c01c91a572e9c4d",
+          "4a98ed8d95f6723087dbffb3c9e4a97abaced0a3",
+          "01d58040e77dcbc82d98cbb657470a86c71f3fe0"
+        ]
+      },
+      "authorship": [
+        {
+          "author": "Wilbert Caba",
+          "contribution": "PMP trail resolver/settings, theme rendering, mobile disclosure and SEO alignment."
+        },
+        {
+          "author": "WordPress contributors",
+          "contribution": "Core Breadcrumbs block and editor controls."
+        }
+      ],
+      "adaptations": [
+        "Load only the breadcrumb modules and label helper from the private application.",
+        "Treat the optional PracticeAreaType module as unavailable when it is not extracted; practice-area singulars retain their post hierarchy.",
+        "Fictional demo pages, scoped seed, navigation and verification are showcase additions.",
+        "Associate the settings checkbox with its label and accept only known scalar option fields before sanitizing them.",
+        "Add a focused frontend entry point, stylesheet imports and the button reset utility.",
+        "Left-align the expanded mobile trail links instead of inheriting core\u2019s centered list alignment."
+      ]
     }
+  },
+  "runtime": {
+    "wordpress": "7.0.9",
+    "environments": [
+      "before",
+      "after"
+    ],
+    "baselineSourceUnchanged": true
   }
 }

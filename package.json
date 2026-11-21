@@ -21,7 +21,9 @@
     "provenance:check": "node scripts/verify-provenance.mjs",
     "demo:seed:logo-slider": "node scripts/demo.mjs seed-logo-slider",
     "demo:seed:video-modal": "node scripts/demo.mjs seed-video-modal",
-    "demo:seed:toc": "node scripts/demo.mjs seed-toc"
+    "demo:seed:toc": "node scripts/demo.mjs seed-toc",
+    "demo:update": "node scripts/demo.mjs update",
+    "demo:seed:breadcrumbs": "node scripts/demo.mjs seed-breadcrumbs"
   },
   "devDependencies": {
     "@wordpress/env": "12.2.0",

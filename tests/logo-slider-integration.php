@@ -7,7 +7,7 @@ $logo_images = get_posts( [ 'post_type' => 'attachment', 'post_status' => 'inher
 showcase_assert( 6 === count( $logo_images ), 'Exactly six fictional logo attachments' );
 $sliders = array_values( array_filter( parse_blocks( $logo_pages[0]->post_content ), static fn( $block ) => 'pmp/logo-slider' === $block['blockName'] ) );
 showcase_assert( 2 === count( $sliders ), 'Fixed-width and automatic-width examples saved' );
-showcase_assert( false === $sliders[0]['attrs']['autoWidth'] && true === $sliders[1]['attrs']['autoWidth'], 'Both width modes represented' );
+showcase_assert( false === ( $sliders[0]['attrs']['autoWidth'] ?? false ) && true === ( $sliders[1]['attrs']['autoWidth'] ?? false ), 'Both width modes represented' );
 $html = do_blocks( $logo_pages[0]->post_content );
 showcase_assert( 12 === substr_count( $html, 'class="splide__slide"' ), 'Both sliders render six original slides' );
 showcase_assert( 1 === substr_count( $html, '<span>Demo brands</span>' ), 'Optional label rendered exactly once' );

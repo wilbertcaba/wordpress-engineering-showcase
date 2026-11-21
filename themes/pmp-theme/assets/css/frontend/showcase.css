@@ -2,6 +2,8 @@
 @import url("../blocks/custom/content-card-template.css");
 @import url("../../../includes/blocks/content-display/variations/grid/style.css");
 @import url("components/patterns.css");
+@import url("../blocks/core/breadcrumbs.css");
+@import url("../blocks/template-parts/site-breadcrumbs.css");
 body { margin: 0; font-family: system-ui, sans-serif; }
 .showcase-header, .showcase-footer { padding: 24px 32px; background: #003366; color: white; }
 .showcase-header a, .showcase-footer a { color: white; }
@@ -26,3 +28,6 @@ a:focus-visible { outline: 3px solid #e59522; outline-offset: 4px; }
 .showcase-toc-article > p { line-height: 1.8; margin-bottom: 3rem; }
 .wp-block-post-content :is(h1,h2,h3,h4,h5,h6)[id] { scroll-margin-top: 32px; }
 @media (max-width: 781.98px) { .showcase-toc-layout { display: block; } }
+
+/* The original reset-button utility lives in the wider private theme. */
+.wp-block-breadcrumbs__toggle { background: transparent; border: 0; padding: 0; }
