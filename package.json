@@ -19,7 +19,8 @@
     "lint:php": "node scripts/lint-php.mjs",
     "local:link": "node scripts/local-link.mjs",
     "provenance:check": "node scripts/verify-provenance.mjs",
-    "demo:seed:logo-slider": "node scripts/demo.mjs seed-logo-slider"
+    "demo:seed:logo-slider": "node scripts/demo.mjs seed-logo-slider",
+    "demo:seed:video-modal": "node scripts/demo.mjs seed-video-modal"
   },
   "devDependencies": {
     "@wordpress/env": "12.2.0",

@@ -45,3 +45,7 @@ WP_CLI::success( 'Integration checks complete.' );
 $logo_registered = WP_Block_Type_Registry::get_instance()->is_registered( 'pmp/logo-slider' );
 showcase_assert( $logo_registered === $after, 'Logo Slider available only in the after theme' );
 if ( $logo_registered ) { require __DIR__ . '/logo-slider-integration.php'; }
+
+$video_registered = WP_Block_Type_Registry::get_instance()->is_registered( 'pmp/video-modal' );
+showcase_assert( $video_registered === $after, 'Video Modal available only in the after theme' );
+if ( $video_registered ) { require __DIR__ . '/video-modal-integration.php'; }

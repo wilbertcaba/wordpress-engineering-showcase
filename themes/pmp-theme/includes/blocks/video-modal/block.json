@@ -1,0 +1,67 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "name": "pmp/video-modal",
+  "title": "Video Modal",
+  "category": "media",
+  "description": "Round play button that opens a video in a modal. Supports YouTube, Vimeo, and video files.",
+  "textdomain": "pmp-theme",
+  "icon": "video-alt3",
+  "attributes": {
+    "videoUrl": {
+      "type": "string",
+      "default": ""
+    },
+    "videoTitle": {
+      "type": "string",
+      "default": ""
+    },
+    "buttonSize": {
+      "type": "number"
+    },
+    "iconId": {
+      "type": "number"
+    },
+    "iconUrl": {
+      "type": "string",
+      "default": ""
+    },
+    "iconSize": {
+      "type": "number"
+    }
+  },
+  "styles": [
+    {
+      "name": "solid",
+      "label": "Solid",
+      "isDefault": true
+    },
+    {
+      "name": "outline",
+      "label": "Outline"
+    }
+  ],
+  "supports": {
+    "html": false,
+    "reusable": false,
+    "color": {
+      "background": true,
+      "text": true,
+      "gradients": false
+    },
+    "__experimentalBorder": {
+      "color": true,
+      "width": true,
+      "style": false,
+      "radius": false,
+      "__experimentalDefaultControls": {
+        "color": true,
+        "width": true
+      }
+    }
+  },
+  "editorStyle": "file:./editor.css",
+  "editorScript": "file:./index.js",
+  "style": "file:./style.css",
+  "viewScript": "file:./view.js"
+}

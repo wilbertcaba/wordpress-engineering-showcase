@@ -1,0 +1,11 @@
+/* Editors see the same round play button as the frontend (style.css also
+   loads in the editor). A block with no video URL yet is dimmed as a hint
+   to fill in the URL in the block settings panel. */
+.wp-block-pmp-video-modal.is-missing-url {
+	opacity: 0.4;
+}
+
+/* No pointer affordance in the canvas — clicking selects the block. */
+.wp-block-pmp-video-modal .wp-block-pmp-video-modal__trigger {
+	cursor: default;
+}

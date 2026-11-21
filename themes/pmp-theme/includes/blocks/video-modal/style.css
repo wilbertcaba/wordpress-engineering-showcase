@@ -1,0 +1,101 @@
+/* The block wrapper is the round button surface: the color/border supports
+   (background for Solid, border color/width for Outline) land on it via
+   get_block_wrapper_attributes(), so they paint the circle itself. */
+.wp-block-pmp-video-modal {
+	align-items: center;
+	background-color: var(--wp--preset--color--primary, #b31942);
+	border: 0 solid currentColor;
+	border-radius: 50%;
+	box-sizing: border-box;
+	color: var(--wp--preset--color--white, #fff);
+	display: inline-flex;
+	height: var(--pmp-video-modal-size, 4.5rem);
+	justify-content: center;
+	transition: transform 0.2s ease;
+	width: var(--pmp-video-modal-size, 4.5rem);
+}
+
+.wp-block-pmp-video-modal:hover {
+	transform: scale(1.06);
+}
+
+.wp-block-pmp-video-modal.is-style-outline {
+	background-color: transparent;
+	border-width: 2px;
+	color: inherit;
+}
+
+.wp-block-pmp-video-modal__trigger {
+	align-items: center;
+	background: transparent;
+	border: 0;
+	border-radius: 50%;
+	color: inherit;
+	cursor: pointer;
+	display: flex;
+	height: 100%;
+	justify-content: center;
+	padding: 0;
+	width: 100%;
+}
+
+.wp-block-pmp-video-modal__trigger svg,
+.wp-block-pmp-video-modal__trigger img {
+	height: var(--pmp-video-modal-icon-size, 45%);
+	object-fit: contain;
+	width: var(--pmp-video-modal-icon-size, 45%);
+}
+
+.wp-block-pmp-video-modal__trigger:focus-visible {
+	outline: 2px solid currentColor;
+	outline-offset: 4px;
+}
+
+.wp-block-pmp-video-modal__dialog {
+	background: transparent;
+	border: 0;
+	max-width: min(90vw, 960px);
+	overflow: visible;
+	padding: 0;
+	width: 100%;
+}
+
+.wp-block-pmp-video-modal__dialog::backdrop {
+	background: rgb(0 0 0 / 0.8);
+}
+
+.wp-block-pmp-video-modal__player {
+	aspect-ratio: 16 / 9;
+	background: #000;
+}
+
+.wp-block-pmp-video-modal__player iframe,
+.wp-block-pmp-video-modal__player video {
+	border: 0;
+	display: block;
+	height: 100%;
+	width: 100%;
+}
+
+.wp-block-pmp-video-modal__close {
+	align-items: center;
+	background: transparent;
+	border: 0;
+	color: var(--wp--preset--color--white, #fff);
+	cursor: pointer;
+	display: flex;
+	justify-content: center;
+	padding: 0.5rem;
+	position: absolute;
+	right: 0;
+	top: -3rem;
+}
+
+.wp-block-pmp-video-modal__close:hover svg {
+	opacity: 0.7;
+}
+
+.wp-block-pmp-video-modal__close:focus-visible {
+	outline: 2px solid var(--wp--preset--color--white, #fff);
+	outline-offset: 2px;
+}

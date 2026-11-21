@@ -448,6 +448,86 @@
       "sourceSha256": "15a2c3b3f640c0574ec85d4f3487fd1b582a87a399d81ef94ee72ec60490de72",
       "extractedSha256": "15a2c3b3f640c0574ec85d4f3487fd1b582a87a399d81ef94ee72ec60490de72",
       "adapted": false
+    },
+    {
+      "source": "includes/blocks/video-modal/block.json",
+      "destination": "themes/pmp-theme/includes/blocks/video-modal/block.json",
+      "repository": "theme",
+      "sourceRevision": "e740a44de7190aa31d630b9ffd4f266c37834b26",
+      "feature": "video-modal",
+      "sourceSha256": "a6d178f665d34f32c3c9319dc85b82349cfcbcd168424b9835cd17fd0c38f29b",
+      "extractedSha256": "a6d178f665d34f32c3c9319dc85b82349cfcbcd168424b9835cd17fd0c38f29b",
+      "adapted": false
+    },
+    {
+      "source": "includes/blocks/video-modal/edit.js",
+      "destination": "themes/pmp-theme/includes/blocks/video-modal/edit.js",
+      "repository": "theme",
+      "sourceRevision": "e740a44de7190aa31d630b9ffd4f266c37834b26",
+      "feature": "video-modal",
+      "sourceSha256": "4ffdbf3dc69c048ce8611139edf1311d0055d192600478ea8609a9dcb60d8475",
+      "extractedSha256": "4ffdbf3dc69c048ce8611139edf1311d0055d192600478ea8609a9dcb60d8475",
+      "adapted": false
+    },
+    {
+      "source": "includes/blocks/video-modal/editor.css",
+      "destination": "themes/pmp-theme/includes/blocks/video-modal/editor.css",
+      "repository": "theme",
+      "sourceRevision": "e740a44de7190aa31d630b9ffd4f266c37834b26",
+      "feature": "video-modal",
+      "sourceSha256": "046a3a779d2ca4aded79a5d0330bbcaf09fda2291c2db50e4f96778ec3f57caa",
+      "extractedSha256": "046a3a779d2ca4aded79a5d0330bbcaf09fda2291c2db50e4f96778ec3f57caa",
+      "adapted": false
+    },
+    {
+      "source": "includes/blocks/video-modal/index.js",
+      "destination": "themes/pmp-theme/includes/blocks/video-modal/index.js",
+      "repository": "theme",
+      "sourceRevision": "e740a44de7190aa31d630b9ffd4f266c37834b26",
+      "feature": "video-modal",
+      "sourceSha256": "44dc5515fd18c15d021eb681a5e3ae02ad3919dad024ac621c4f8c49104f544b",
+      "extractedSha256": "44dc5515fd18c15d021eb681a5e3ae02ad3919dad024ac621c4f8c49104f544b",
+      "adapted": false
+    },
+    {
+      "source": "includes/blocks/video-modal/markup.php",
+      "destination": "themes/pmp-theme/includes/blocks/video-modal/markup.php",
+      "repository": "theme",
+      "sourceRevision": "e740a44de7190aa31d630b9ffd4f266c37834b26",
+      "feature": "video-modal",
+      "sourceSha256": "12707d496fbd12d38addac44bdbc7624467f6d23077c913f91dc1cad2c603610",
+      "extractedSha256": "12707d496fbd12d38addac44bdbc7624467f6d23077c913f91dc1cad2c603610",
+      "adapted": false
+    },
+    {
+      "source": "includes/blocks/video-modal/save.js",
+      "destination": "themes/pmp-theme/includes/blocks/video-modal/save.js",
+      "repository": "theme",
+      "sourceRevision": "e740a44de7190aa31d630b9ffd4f266c37834b26",
+      "feature": "video-modal",
+      "sourceSha256": "f563d82b23713db644b465da03224b5ba8443782dadac6843bcd08de2e845e6d",
+      "extractedSha256": "f563d82b23713db644b465da03224b5ba8443782dadac6843bcd08de2e845e6d",
+      "adapted": false
+    },
+    {
+      "source": "includes/blocks/video-modal/style.css",
+      "destination": "themes/pmp-theme/includes/blocks/video-modal/style.css",
+      "repository": "theme",
+      "sourceRevision": "e740a44de7190aa31d630b9ffd4f266c37834b26",
+      "feature": "video-modal",
+      "sourceSha256": "789131aa332757928486e15dbdcd6da2bed00a1bbec25c332f0e1c6b89d5bb75",
+      "extractedSha256": "789131aa332757928486e15dbdcd6da2bed00a1bbec25c332f0e1c6b89d5bb75",
+      "adapted": false
+    },
+    {
+      "source": "includes/blocks/video-modal/view.js",
+      "destination": "themes/pmp-theme/includes/blocks/video-modal/view.js",
+      "repository": "theme",
+      "sourceRevision": "e740a44de7190aa31d630b9ffd4f266c37834b26",
+      "feature": "video-modal",
+      "sourceSha256": "6941c98914b097132f9030a912f8965210d6b27873e52f119e02d0e8655dbe4c",
+      "extractedSha256": "6b4aa16482d05e3568944596d29a020de7e9ac8672c24c8154307cd41d5866a8",
+      "adapted": true
     }
   ],
   "notes": [
@@ -499,6 +579,25 @@
         "Register a block viewScript entry point instead of initializing from the original application-wide frontend bundle.",
         "Demo fixtures, seed scripts, navigation and verification are showcase-only additions.",
         "Remove the sizes=auto keyword when automatic-width images are switched to eager loading, avoiding WordPress intrinsic-size containment distorting their widths."
+      ]
+    },
+    "video-modal": {
+      "type": "new",
+      "environment": "after",
+      "repository": "https://github.com/pmp-marketing-group/pmp-theme",
+      "sourceRevision": "e740a44de7190aa31d630b9ffd4f266c37834b26",
+      "sourceCommits": [
+        "1d2bb0a3d7ddeae566b9badca058f6da3286b315",
+        "d32649d70a4979780e43322dd37bca79ea93bd2e",
+        "e740a44de7190aa31d630b9ffd4f266c37834b26"
+      ],
+      "documentation": "docs/video-modal/README.md",
+      "adaptations": [
+        "Validate HTTP(S) schemes, provider host boundaries, video IDs and Vimeo privacy hashes before creating a player.",
+        "Restore the body overflow style present before opening the dialog.",
+        "Local media, the demo page, seeding, navigation and verification are showcase additions.",
+        "Subscribe to Vimeo\u2019s current ended event while retaining the historical finish message as a compatibility fallback.",
+        "Explicitly pause and unload native video before detaching it on dialog close."
       ]
     }
   }

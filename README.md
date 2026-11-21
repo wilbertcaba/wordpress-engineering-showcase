@@ -10,6 +10,7 @@ This repository includes only the theme and plugin code needed for the demos, wi
 | --- | --- | --- | --- |
 | Practice Areas Grid — Variation 5 | Extension | Before and after | [Feature README](docs/practice-areas-grid-variation-5/README.md) |
 | Logo Slider | New feature | After only | [Feature README](docs/logo-slider/README.md) |
+| Video Modal | New feature | After only | [Feature README](docs/video-modal/README.md) |
 
 Extensions may include a comparison with their original behavior. New features are available in the after environment only. Each feature’s documentation explains what is available and how to review it.
 
@@ -50,7 +51,7 @@ SHOWCASE_RUNTIME=php npm run demo:setup
 
 `demo:setup` installs the theme dependencies, builds both versions, starts both WordPress sites, and seeds the fictional content. Running it again restores the seeded demo records and home page, overwriting edits to those records. Use `demo:start` for everyday use instead.
 
-Open [before](http://localhost:8888) and [after](http://localhost:8890). The Grid is the home page; [Logo Slider](http://localhost:8890/logo-slider/) is available in the after environment only. Local-only wp-env login: `admin` / `password`. Keep these environments local.
+Open [before](http://localhost:8888) and [after](http://localhost:8890). The Grid is the home page; [Logo Slider](http://localhost:8890/logo-slider/) and [Video Modal](http://localhost:8890/video-modal/) are available in the after environment only. Local-only wp-env login: `admin` / `password`. Keep these environments local.
 
 ### Daily use
 
@@ -64,6 +65,8 @@ Start the existing sites with your chosen runtime. This reuses their databases a
 | Run WordPress integration checks | `npm run demo:check` | `SHOWCASE_RUNTIME=php npm run demo:check` |
 
 To add or restore only Logo Slider without resetting Grid edits, use `SHOWCASE_RUNTIME=php npm run demo:seed:logo-slider` for PHP, or `npm run demo:seed:logo-slider` for Docker. See the [feature guide](docs/logo-slider/README.md#add-this-example-to-an-existing-demo-installation) for the build step when upgrading an existing checkout.
+
+To add or restore only Video Modal while keeping your other feature edits, use `SHOWCASE_RUNTIME=php npm run demo:seed:video-modal` for PHP, or `npm run demo:seed:video-modal` for Docker. See its [feature guide](docs/video-modal/README.md#add-this-example-to-an-existing-demo-installation) for the build step.
 
 `demo:seed` updates the showcase-owned records without creating duplicates. It overwrites edits to the fictional demo records and restores the showcase home-page settings.
 

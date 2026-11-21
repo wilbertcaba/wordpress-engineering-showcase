@@ -54,3 +54,17 @@ The after-only Logo Slider was extracted with its label block and pinned Splide 
 A browser test exposed a WordPress responsive-image compatibility issue: an image switched from lazy to eager loading could retain `sizes="auto"`, producing 3000px size containment. The extracted initializer removes that keyword before decoding automatic-width images. This adaptation and the per-block script entry point are recorded in the provenance manifest and feature README. The private theme source and existing comparison tags were not changed.
 
 Docker execution and Local-app provisioning remain outside the verified runtime coverage recorded above.
+
+## Video Modal addition — November 20, 2026
+
+The after-only Video Modal was extracted with its editor controls, dynamic renderer, native dialog behavior, and provider handling. The demo uses an original bundled four-second silent WebM clip and PNG icon, with no external media dependency.
+
+- All thirteen browser tests passed together: four Grid, four Logo Slider, and five Video Modal tests.
+- Video Modal checks exercised actual local playback, lazy media loading, independent instances, desktop/mobile bounds, keyboard focus and Escape, backdrop/close-button dismissal, playback-end dismissal, native media cleanup, prior overflow restoration, and editor settings saved/reloaded without invalid blocks.
+- Controlled YouTube/Vimeo iframe responses verified origin/source validation, provider subscriptions, and dismissal/cleanup. Live third-party playback was not verified.
+- WordPress integration checks passed in both states, including after-only registration, one owned page, two attachments, both trigger styles, escaped titles, absent initial player markup, and block script registration.
+- The feature-only seed ran twice. Grid and Logo Slider page-content hashes and the home-page setting matched before and after; fixture counts remained stable.
+- The build, JavaScript lint, PHP syntax checks, eight unit tests, and hashes for sixty extracted source files passed. Existing webpack size recommendations remain as recorded above.
+- Desktop/mobile dialog screenshots were inspected; existing after screenshots were refreshed for the new navigation link.
+
+Showcase adaptations include URL validation, Vimeo privacy-hash preservation and its current `ended` subscription, explicit native-video pause/unload, and restoration of the previous body overflow style. These are recorded in provenance separately from the original implementation. Private source checkouts and comparison tags were left unchanged. Docker execution and Local-app provisioning remain unverified as described above.

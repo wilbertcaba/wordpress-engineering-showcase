@@ -23,7 +23,7 @@ Splide provides the carousel engine; my code implements the Gutenberg blocks, se
 
 ## Try the feature
 
-Follow the [shared setup instructions](../../README.md#running-the-demos), then open [the Logo Slider page](http://localhost:8890/logo-slider/) in the after environment. The Grid remains the home page; the after site’s header links to both features.
+Follow the [shared setup instructions](../../README.md#running-the-demos), then open [the Logo Slider page](http://localhost:8890/logo-slider/) in the after environment. The Grid remains the home page; the after site’s header links to each feature.
 
 The page contains two examples using the same six fictional logos:
 

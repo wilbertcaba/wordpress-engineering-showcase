@@ -82,6 +82,13 @@ else if (action === 'seed-logo-slider')
 		'eval-file',
 		'/var/www/html/wp-content/showcase/scripts/seed-logo-slider.php',
 	]);
+else if (action === 'seed-video-modal')
+	env('after', 'run', [
+		'cli',
+		'wp',
+		'eval-file',
+		'/var/www/html/wp-content/showcase/scripts/seed-video-modal.php',
+	]);
 else if (action === 'setup') {
 	prepare();
 	start();
@@ -108,4 +115,7 @@ else if (action === 'setup') {
 			'eval-file',
 			'/var/www/html/wp-content/showcase/tests/integration.php',
 		]);
-} else throw new Error('Use prepare, start, seed, seed-logo-slider, setup, stop, or check.');
+} else
+	throw new Error(
+		'Use prepare, start, seed, seed-logo-slider, seed-video-modal, setup, stop, or check.',
+	);
