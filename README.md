@@ -8,11 +8,11 @@ This repository includes only the theme and plugin code needed for the demos, wi
 
 | Feature | Type | Demo availability | Documentation |
 | --- | --- | --- | --- |
-| Practice Areas Grid — Variation 5 | Extension | Before and after | [README](docs/practice-areas-grid-variation-5/README.md) |
-| Logo Slider | New feature | After only | [README](docs/logo-slider/README.md) |
-| Video Modal | New feature | After only | [README](docs/video-modal/README.md) |
-| Table of Contents | New feature | After only | [README](docs/table-of-contents/README.md) |
-| Breadcrumbs | Extension of WP core | After only | [README](docs/breadcrumbs/README.md) |
+| Practice Areas Grid — Variation 5 | Extension: 10up block & pattern | Before and after | [README](docs/practice-areas-grid-variation-5/README.md) |
+| Breadcrumbs | Extension: WordPress core block | After only | [README](docs/breadcrumbs/README.md) |
+| Logo Slider | New block | After only | [README](docs/logo-slider/README.md) |
+| Video Modal | New block | After only | [README](docs/video-modal/README.md) |
+| Table of Contents | New block | After only | [README](docs/table-of-contents/README.md) |
 
 Extensions may include a comparison with their original behavior. New features are available in the after environment only. Each feature’s documentation explains what is available and how to review it.
 
