@@ -1,6 +1,6 @@
 # WordPress Engineering Showcase
 
-This repository showcases my WordPress development work, including extensions to theme and plugin features originally developed by 10up, as well as new features I built to meet business needs and goals. Each feature has dedicated documentation explaining its purpose, implementation, and engineering decisions. Before/after examples are included where relevant.
+This repository showcases my WordPress development work on a 10up-developed theme and plugin, including extensions to existing features and new functionality I built to meet business needs and goals. Each feature has dedicated documentation explaining its purpose, implementation, and engineering decisions. Before/after examples are included where relevant.
 
 This repository includes only the theme and plugin code needed for the demos, with credit to the original authors. You don’t need access to the private repositories to run it. This is a wp-content repository, not a WordPress core installation.
 
